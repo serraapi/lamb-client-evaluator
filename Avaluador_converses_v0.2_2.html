@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaluador de converses</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJsdjQtdCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2U4OTA2ZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M4NjAzZiIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsdjQtYiIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzVmYjRiOSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzM3ODU4YSIvPjwvbGluZWFyR3JhZGllbnQ+PGNsaXBQYXRoIGlkPSJsdjQtYyI+PHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9IjM0IiBoZWlnaHQ9IjI1IiByeD0iOSIvPjxwYXRoIGQ9Ik04IDI0IEw0IDM0IEwxNyAyNiBaIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgZmlsbD0iIzAwMCIgb3BhY2l0eT0iMC4xNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyKSI+PHJlY3QgeD0iMTciIHk9IjEyIiB3aWR0aD0iNDMiIGhlaWdodD0iNDgiIHJ4PSI5Ii8+PHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9IjM0IiBoZWlnaHQ9IjI1IiByeD0iOSIvPjxwYXRoIGQ9Ik04IDI0IEw0IDM0IEwxNyAyNiBaIi8+PC9nPjxyZWN0IHg9IjE3IiB5PSIxMiIgd2lkdGg9IjQzIiBoZWlnaHQ9IjQ4IiByeD0iOSIgZmlsbD0idXJsKCNsdjQtYikiLz48cmVjdCB4PSIyNCIgeT0iMzEiIHdpZHRoPSIxNCIgaGVpZ2h0PSI1IiByeD0iMi41IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iNDEiIHk9IjMxIiB3aWR0aD0iMTIiIGhlaWdodD0iNSIgcng9IjIuNSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC41NSIvPjxyZWN0IHg9IjI0IiB5PSI0MCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjUiIHJ4PSIyLjUiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSI0NSIgeT0iNDAiIHdpZHRoPSI4IiBoZWlnaHQ9IjUiIHJ4PSIyLjUiIGZpbGw9IiNmZmYiIG9wYWNpdHk9IjAuNTUiLz48cmVjdCB4PSIyNCIgeT0iNDkiIHdpZHRoPSIxMSIgaGVpZ2h0PSI1IiByeD0iMi41IiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iMzgiIHk9IjQ5IiB3aWR0aD0iMTUiIGhlaWdodD0iNSIgcng9IjIuNSIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iMC41NSIvPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIzNCIgaGVpZ2h0PSIyNSIgcng9IjkiIGZpbGw9InVybCgjbHY0LXQpIi8+PHBhdGggZD0iTTggMjQgTDQgMzQgTDE3IDI2IFoiIGZpbGw9IiNjZDY2NDYiLz48cGF0aCBkPSJNMTEgMTQuNSBMMTYuNSAyMCBMMjcgOS41IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=">
+<style>
+  :root {
+    --bg: #181816; --card-bg: #21211e; --input-bg: #2b2b27; --border: #3b3a35; --border-focus: #7a786f;
+    --text-primary: #ececec; --text-secondary: #9e9c94; --accent: #d97757; --accent-hover: #e58869;
+    --btn-secondary: #32322d; --btn-secondary-hover: #3d3d37; --pre-bg: #121210;
+    --radius: 12px; --radius-sm: 8px; --success: #a8c49e; --error: #e58869; --warn: #d9b45a;
+    --random: #4a9ea3;
+  }
+  html { color-scheme: dark; }
+  body.light-theme {
+    color-scheme: light;
+    --bg: #f6f5f0; --card-bg: #ffffff; --input-bg: #eeece4; --border: #dcd9cd; --border-focus: #8e8b80;
+    --text-primary: #191816; --text-secondary: #6e6b62; --accent-hover: #c46344;
+    --btn-secondary: #e6e3d8; --btn-secondary-hover: #dcd8cb; --pre-bg: #eeece4;
+    --success: #2f6832; --error: #c0472a; --warn: #9a7413; --random: #2f8a90;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background-color: var(--bg); color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 40px 16px; display: flex; justify-content: center;
+  }
+  .wrap { width: 100%; max-width: 1240px; }
+  header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; gap: 16px; flex-wrap: wrap; }
+  h1 { font-size: 1.5rem; font-weight: 500; margin: 0 0 6px 0; letter-spacing: -0.02em; }
+  .subtitle { color: var(--text-secondary); font-size: 0.88rem; margin: 0; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .logo { width: 56px; height: 56px; flex: none; }
+  .badge { background-color: var(--accent); color: #fff; font-size: 0.7rem; font-weight: bold; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 6px; }
+  .theme-btn {
+    background-color: var(--card-bg); border: 1px solid var(--border); color: var(--text-primary);
+    border-radius: var(--radius-sm); cursor: pointer; width: 31px; height: 31px; padding: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .theme-btn svg { width: 16px; height: 16px; }
+  .theme-btn .icon-moon { display: none; }
+  body.light-theme .theme-btn .icon-sun { display: none; }
+  body.light-theme .theme-btn .icon-moon { display: block; }
+  .card { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .card-title { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin: 0; }
+  .btn {
+    cursor: pointer; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500;
+    padding: 9px 14px; font-family: inherit; display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap;
+  }
+  .btn-secondary { background-color: var(--btn-secondary); color: var(--text-primary); }
+  .btn-secondary:hover { background-color: var(--btn-secondary-hover); border-color: var(--border-focus); }
+  .btn-primary { background-color: var(--accent); color: #fff; border: none; }
+  .btn-primary:hover { background-color: var(--accent-hover); }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .help-btn {
+    width: 20px; height: 20px; padding: 0; border-radius: 50%; background-color: var(--btn-secondary); border: 1px solid var(--border);
+    color: var(--text-secondary); font-size: 0.75rem; font-weight: 700; font-family: inherit; cursor: pointer;
+  }
+  .help-btn:hover { color: #fff; background-color: var(--accent); border-color: var(--accent); }
+
+  .carrega { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 24px; padding: 16px 20px; }
+  .carrega .card-head { margin-bottom: 10px; }
+  .carrega .claus { margin: 0; padding: 0 0 0 24px; border-top: none; border-left: 1px solid var(--border); }
+  .carrega .claus h3 { margin-top: 2px; margin-bottom: 10px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .claus-cap { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .carrega .claus .claus-cap h3 { margin: 0; }
+  #clausCos { margin-top: 10px; }
+  #llistaClaus:empty { display: none; }
+  /* --- Commutador (mateix disseny que el generador) --- */
+  .switch-row { display: flex; align-items: center; gap: 8px; }
+  .switch { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.85rem; color: var(--text-primary); user-select: none; }
+  .switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .switch .track { position: relative; width: 34px; height: 20px; flex-shrink: 0; border-radius: 999px; background-color: var(--btn-secondary); border: 1px solid var(--border); transition: background-color 0.2s ease, border-color 0.2s ease; }
+  .switch .track::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--text-secondary); transition: transform 0.2s ease, background-color 0.2s ease; }
+  .switch input:checked + .track { background-color: var(--accent); border-color: var(--accent); }
+  .switch input:checked + .track::after { transform: translateX(14px); background-color: #fff; }
+  .switch input:focus-visible + .track { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @keyframes sacseig {
+    0%, 100% { transform: translateX(0); }
+    15% { transform: translateX(-5px); } 30% { transform: translateX(5px); }
+    45% { transform: translateX(-3px); } 60% { transform: translateX(3px); } 75% { transform: translateX(-1px); }
+  }
+  @keyframes resplendor { 0%, 100% { box-shadow: 0 0 0 0 transparent; } 30% { box-shadow: 0 0 0 4px rgba(217, 119, 87, 0.35); } }
+  .switch-row.sacseig { animation: sacseig 0.6s ease; }
+  .switch-row.sacseig .track { animation: resplendor 1.2s ease; border-radius: 999px; }
+  @media (prefers-reduced-motion: reduce) { .switch-row.sacseig, .switch-row.sacseig .track { animation: none; } }
+  .drop-icona { flex: none; color: var(--text-secondary); }
+  .xips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .xip { font-size: 0.78rem; color: var(--text-secondary); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); background-color: var(--input-bg); white-space: nowrap; }
+  .xip b { font-weight: 600; color: var(--text-primary); font-variant-numeric: tabular-nums; margin-right: 2px; }
+  .xip.ok b { color: var(--success); } .xip.warn b { color: var(--warn); } .xip.err b { color: var(--error); }
+  @media (max-width: 860px) { .carrega { grid-template-columns: minmax(0, 1fr); } .carrega .claus { padding: 14px 0 0; border-left: none; border-top: 1px solid var(--border); } }
+  .drop {
+    border: 2px dashed var(--border); border-radius: var(--radius); padding: 34px 20px; text-align: center;
+    background-color: var(--input-bg); transition: border-color 0.2s ease, background-color 0.2s ease; cursor: pointer;
+  }
+  .drop:hover, .drop.over { border-color: var(--accent); }
+  .drop.over { background-color: rgba(217, 119, 87, 0.08); }
+  .drop { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 18px 20px; text-align: left; }
+  /* Zona petita per als JSON dels clients */
+  .drop-claus { margin-top: 12px; padding: 10px 14px; gap: 12px; border-width: 1.5px; border-radius: var(--radius-sm); justify-content: flex-start; }
+  .drop-claus strong { font-size: 0.84rem; margin-bottom: 1px; }
+  .drop-claus span { font-size: 0.76rem; }
+  .drop strong { display: block; font-weight: 500; margin-bottom: 3px; }
+  .drop span { font-size: 0.82rem; color: var(--text-secondary); }
+  .note { margin: 10px 0 0; font-size: 0.78rem; color: var(--text-secondary); line-height: 1.45; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .stat { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .stat .n { font-size: 1.6rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .stat .k { font-size: 0.78rem; color: var(--text-secondary); }
+  .stat.ok .n { color: var(--success); } .stat.warn .n { color: var(--warn); } .stat.err .n { color: var(--error); }
+
+  .taula-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th, td { padding: 8px 8px; border-bottom: 1px solid var(--border); text-align: center; white-space: nowrap; }
+  th { font-size: 0.74rem; font-weight: 600; color: var(--text-secondary); position: sticky; top: 0; background-color: var(--card-bg); }
+  th:first-child, td:first-child, th:last-child, td:last-child { text-align: left; }
+  td.num { font-variant-numeric: tabular-nums; }
+  td.total { font-weight: 600; }
+  td.no { color: var(--text-secondary); font-style: italic; }
+  td.avisos { white-space: normal; min-width: 260px; font-size: 0.78rem; line-height: 1.4; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background-color: var(--input-bg); }
+  .estat { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+  .estat.ok { background-color: var(--success); } .estat.warn { background-color: var(--warn); } .estat.err { background-color: var(--error); }
+  .av-err { color: var(--error); } .av-warn { color: var(--warn); } .av-info { color: var(--text-secondary); } .av-ok { color: var(--success); }
+  .claus { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .claus h3 { font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin: 0 0 6px; }
+  .claus ul { list-style: none; margin: 0; padding: 0; }
+  .clau-fila { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 5px 0; font-size: 0.84rem; border-bottom: 1px solid var(--border); }
+  .clau-fila:last-child { border-bottom: none; }
+  .clau-meta { display: inline-flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.8rem; }
+  .clau-meta code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: 600; letter-spacing: 0.08em; color: var(--text-primary); }
+  .treure { background: none; border: 1px solid var(--border); color: var(--text-secondary); border-radius: 6px; width: 24px; height: 24px; cursor: pointer; font-size: 0.95rem; line-height: 1; }
+  .treure:hover { color: var(--error); border-color: var(--error); }
+  /* Confirmació amb un segon clic */
+  :root { --perill: #f2555a; --perill-fons: rgba(242, 85, 90, 0.14); }
+  body.light-theme { --perill: #c62f35; --perill-fons: rgba(198, 47, 53, 0.1); }
+  .btn.confirmant, .treure.confirmant { background-color: var(--perill-fons); border-color: var(--perill); color: var(--perill); }
+  .treure.confirmant { width: auto; padding: 0 9px; font-size: 0.75rem; font-weight: 600; }
+  @keyframes confirma { 0% { transform: scale(0.96); } 100% { transform: none; } }
+  .confirmant { animation: confirma 0.18s ease; }
+
+  /* --- Conversa en un panell lateral --- */
+  :root { --xat-w: min(480px, 92vw); }
+  body { transition: padding-right 0.34s cubic-bezier(0.22, 1, 0.36, 1); }
+  @media (min-width: 1000px) { body.xat-obert { padding-right: calc(var(--xat-w) + 16px); } }
+  .cel-alumne { display: inline-flex; align-items: center; gap: 0; }
+  .col-accions { width: 1%; text-align: right !important; cursor: default; }
+  td.avisos, th.th-avisos { text-align: left; }
+  .accions-fila { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
+  /* Mode selecció (com una galeria): la fila sencera selecciona */
+  .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+  .btn.actiu { background-color: var(--accent); border-color: var(--accent); color: #fff; }
+  .sel-botons { display: flex; gap: 8px; margin-left: auto; }
+  .card-head .xips { margin-left: auto; }
+  .card-head .xips + .sel-botons { margin-left: 4px; }
+  .marca-sel {
+    display: none; width: 20px; height: 20px; border-radius: 50%; flex: none; margin-left: 2px;
+    border: 2px solid var(--border-focus); color: transparent; align-items: center; justify-content: center;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+  .mode-seleccio .marca-sel { display: inline-flex; }
+  .mode-seleccio tbody tr { user-select: none; }
+  .mode-seleccio tbody tr:hover .marca-sel { border-color: var(--accent); }
+  tbody tr.seleccionada .marca-sel { background-color: var(--accent); border-color: var(--accent); color: #fff; }
+  tbody tr.seleccionada, tbody tr.seleccionada:hover { background-color: rgba(217, 119, 87, 0.12); }
+  .btn-ico {
+    width: 28px; height: 26px; padding: 0; border-radius: 7px; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: none; border: 1px solid var(--border); color: var(--text-secondary);
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .btn-paperera:hover:not(.confirmant) { color: var(--perill); border-color: var(--perill); }
+  .btn-paperera.confirmant { width: auto; padding: 0 9px; font-size: 0.75rem; font-weight: 600; background-color: var(--perill-fons); border-color: var(--perill); color: var(--perill); }
+  .btn-xat {
+    width: 28px; height: 26px; padding: 0; border-radius: 7px; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: none; border: 1px solid var(--border); color: var(--text-secondary);
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .btn-xat:hover:not(:disabled), .btn-xat.actiu { color: #fff; background-color: var(--accent); border-color: var(--accent); }
+  .btn-xat:disabled { opacity: 0.3; cursor: default; }
+  .xat {
+    --corba: cubic-bezier(0.22, 1, 0.36, 1);
+    --amp-w: min(1040px, 94vw);
+    position: fixed; top: 0; right: 0; height: 100vh; width: var(--xat-w); z-index: 90;
+    display: flex; flex-direction: column;
+    background-color: var(--card-bg); border-left: 1px solid var(--border); box-shadow: -12px 0 40px rgba(0, 0, 0, 0.28);
+    transform: translateX(105%); visibility: hidden;
+    transition: transform 0.34s var(--corba), visibility 0s linear 0.34s,
+      top 0.34s var(--corba), right 0.34s var(--corba), width 0.34s var(--corba), height 0.34s var(--corba), border-radius 0.34s var(--corba);
+  }
+  .xat.obert { transform: none; visibility: visible; transition: transform 0.34s var(--corba), visibility 0s,
+      top 0.34s var(--corba), right 0.34s var(--corba), width 0.34s var(--corba), height 0.34s var(--corba), border-radius 0.34s var(--corba); }
+  /* Vista ampliada: finestra flotant gran al mig */
+  .xat.ampliat { top: 4vh; height: 92vh; width: var(--amp-w); right: calc((100vw - var(--amp-w)) / 2); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5); }
+  .xat.ampliat .xat-cos { padding-left: max(24px, calc((100% - 860px) / 2)); padding-right: max(24px, calc((100% - 860px) / 2)); }
+  .xat.ampliat .bombolla-fila { max-width: 78%; }
+  .xat-fons { position: fixed; inset: 0; z-index: 89; background-color: rgba(0, 0, 0, 0.5); opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+  body.xat-ampliat .xat-fons { opacity: 1; pointer-events: auto; }
+  @media (min-width: 1000px) { body.xat-ampliat.xat-obert { padding-right: 0; } }
+  /* Vora per canviar l'amplada */
+  .xat-vora { position: absolute; left: -5px; top: 0; bottom: 0; width: 10px; cursor: col-resize; z-index: 2; touch-action: none; }
+  .xat-vora::after { content: ""; position: absolute; left: 4px; top: 0; bottom: 0; width: 2px; background-color: transparent; transition: background-color 0.15s ease; }
+  .xat-vora:hover::after, body.redimensionant .xat-vora::after { background-color: var(--accent); }
+  .xat.ampliat .xat-vora { display: none; }
+  body.redimensionant, body.redimensionant .xat { transition: none !important; user-select: none; cursor: col-resize; }
+  @media (max-width: 999px) { .xat-vora { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .xat, .xat.obert, body, .xat-fons { transition: none; } }
+  .xat-cap { display: flex; align-items: flex-start; gap: 10px; padding: 16px 16px 12px 20px; border-bottom: 1px solid var(--border); }
+  .xat-cap .titols { flex: 1; min-width: 0; }
+  .xat-cap h2 { font-size: 1.05rem; font-weight: 500; margin: 0 0 2px; overflow-wrap: anywhere; }
+  .xat-cap p { margin: 0; font-size: 0.75rem; color: var(--text-secondary); overflow-wrap: anywhere; }
+  .xat-botons { display: flex; gap: 6px; flex: none; }
+  .xat-botons button {
+    width: 32px; height: 32px; padding: 0; border-radius: var(--radius-sm); cursor: pointer;
+    background: none; border: 1px solid var(--border); color: var(--text-secondary); font-size: 1.05rem;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .xat-botons button:hover:not(:disabled) { color: var(--text-primary); border-color: var(--border-focus); }
+  .xat-botons button:disabled { opacity: 0.35; cursor: default; }
+  .xat-opcions { display: flex; align-items: center; gap: 8px; padding: 8px 20px; font-size: 0.78rem; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+  .xat-opcions input { accent-color: var(--accent); margin: 0; }
+  .xat-cos { flex: 1; overflow-y: auto; padding: 18px 16px 28px; display: flex; flex-direction: column; gap: 14px; }
+  .bombolla-fila { display: flex; flex-direction: column; max-width: 86%; }
+  .bombolla-fila.client { align-self: flex-start; align-items: flex-start; }
+  .bombolla-fila.alumne { align-self: flex-end; align-items: flex-end; }
+  .bombolla-nom { font-size: 0.72rem; color: var(--text-secondary); margin: 0 6px 4px; }
+  .xat-tag { color: var(--accent); font-weight: 600; }
+  .bombolla { padding: 9px 13px; border-radius: 16px; font-size: 0.86rem; line-height: 1.5; overflow-wrap: anywhere; max-width: 100%; }
+  .client .bombolla { background-color: var(--input-bg); border: 1px solid var(--border); border-bottom-left-radius: 5px; color: var(--text-primary); }
+  .alumne .bombolla { background-color: var(--accent); color: #fff; border-bottom-right-radius: 5px; }
+  .bombolla p { margin: 0 0 8px; } .bombolla p:last-child { margin-bottom: 0; }
+  .bombolla .titol-md { font-weight: 600; }
+  .bombolla ul, .bombolla ol { margin: 0 0 8px; padding-left: 20px; }
+  .bombolla code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.8em; }
+  .bombolla .oculta { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.72rem; opacity: 0.6; margin: 0 0 6px; overflow-wrap: anywhere; }
+  .taula-xat { overflow-x: auto; margin: 0 0 8px; }
+  .bombolla table { border-collapse: collapse; font-size: 0.78rem; }
+  .bombolla th, .bombolla td { border: 1px solid var(--border); padding: 4px 6px; text-align: left; white-space: normal; position: static; background: none; color: inherit; }
+  .bombolla th { font-weight: 600; }
+  .bombolla tbody tr { cursor: auto; }
+  .bombolla tbody tr:hover { background: none; }
+  .buit { text-align: center; color: var(--text-secondary); font-size: 0.86rem; padding: 26px 0 10px; }
+  .accions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; flex-wrap: wrap; }
+
+  .modal-overlay { position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.6); display: none; align-items: center; justify-content: center; padding: 24px 16px; z-index: 100; }
+  .modal-overlay.open { display: flex; }
+  .modal { background-color: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); width: 100%; max-width: 860px; max-height: 100%; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.45); }
+  .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 20px 24px 14px; border-bottom: 1px solid var(--border); }
+  .modal-head h2 { font-size: 1.15rem; font-weight: 500; margin: 0 0 4px; }
+  .modal-head p { margin: 0; font-size: 0.82rem; color: var(--text-secondary); }
+  .modal-close { background: none; border: 1px solid var(--border); color: var(--text-secondary); border-radius: var(--radius-sm); width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer; flex-shrink: 0; }
+  .modal-body { padding: 18px 24px 24px; overflow-y: auto; font-size: 0.86rem; line-height: 1.55; }
+  .modal-body h3 { font-size: 0.92rem; font-weight: 600; margin: 16px 0 6px; }
+  .modal-body h3:first-child { margin-top: 0; }
+  .modal-body ol, .modal-body ul { margin: 0; padding-left: 20px; }
+  .modal-body li { margin-bottom: 6px; }
+  .modal-body code { background-color: var(--pre-bg); padding: 1px 5px; border-radius: 4px; font-size: 0.8rem; }
+  pre.text-aval { background-color: var(--pre-bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; white-space: pre-wrap; word-break: break-word; font-size: 0.78rem; max-height: 320px; overflow-y: auto; margin: 0; }
+  body.modal-open { overflow: hidden; }
+  .hidden { display: none !important; }
+  @media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .logo { width: 44px; height: 44px; } }
+
+  /* Selector d'idioma (com al generador) */
+  .header-controls { display: flex; align-items: center; gap: 8px; }
+  .lang-selector { display: flex; gap: 4px; background-color: var(--card-bg); padding: 3px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+  .lang-btn { background: none; border: none; color: var(--text-secondary); font-size: 0.75rem; font-weight: 600; padding: 5px 9px; border-radius: 4px; cursor: pointer; font-family: inherit; }
+  .lang-btn.active { background-color: var(--btn-secondary); color: var(--text-primary); }
+  .lang-btn:hover:not(.active) { color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lv4-t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8906f"/><stop offset="1" stop-color="#c8603f"/></linearGradient><linearGradient id="lv4-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fb4b9"/><stop offset="1" stop-color="#37858a"/></linearGradient><clipPath id="lv4-c"><rect x="2" y="2" width="34" height="25" rx="9"/><path d="M8 24 L4 34 L17 26 Z"/></clipPath></defs><g fill="#000" opacity="0.14" transform="translate(0 2)"><rect x="17" y="12" width="43" height="48" rx="9"/><rect x="2" y="2" width="34" height="25" rx="9"/><path d="M8 24 L4 34 L17 26 Z"/></g><rect x="17" y="12" width="43" height="48" rx="9" fill="url(#lv4-b)"/><rect x="24" y="31" width="14" height="5" rx="2.5" fill="#fff"/><rect x="41" y="31" width="12" height="5" rx="2.5" fill="#fff" opacity="0.55"/><rect x="24" y="40" width="18" height="5" rx="2.5" fill="#fff"/><rect x="45" y="40" width="8" height="5" rx="2.5" fill="#fff" opacity="0.55"/><rect x="24" y="49" width="11" height="5" rx="2.5" fill="#fff"/><rect x="38" y="49" width="15" height="5" rx="2.5" fill="#fff" opacity="0.55"/><rect x="2" y="2" width="34" height="25" rx="9" fill="url(#lv4-t)"/><path d="M8 24 L4 34 L17 26 Z" fill="#cd6646"/><path d="M11 14.5 L16.5 20 L27 9.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h1><span data-t="titol">Avaluador de converses</span> <span class="badge" id="versio"></span></h1>
+        <p class="subtitle" data-t="subtitol"></p>
+      </div>
+    </div>
+    <div class="header-controls">
+    <button class="theme-btn" onclick="alternarTema()" data-tt="tema">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <div class="lang-selector">
+      <button class="lang-btn active" onclick="canviarIdiomaUI('cat')" id="btn_lang_cat">CAT</button>
+      <button class="lang-btn" onclick="canviarIdiomaUI('es')" id="btn_lang_es">ES</button>
+      <button class="lang-btn" onclick="canviarIdiomaUI('en')" id="btn_lang_en">EN</button>
+    </div>
+    </div>
+  </header>
+
+  <div class="card carrega">
+    <div class="carrega-esq">
+      <div class="card-head">
+        <div style="display:flex;align-items:center;gap:8px">
+          <h2 class="card-title" data-t="cardConverses"></h2>
+          <button type="button" class="help-btn" onclick="obrirModal('guia')" data-tt="ajuda">?</button>
+        </div>
+      </div>
+      <div class="drop" id="drop" tabindex="0" role="button" data-tt="dropAria">
+        <svg class="drop-icona" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7 9l5-5 5 5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+        <div>
+          <strong data-t="dropTitol"></strong>
+          <span data-t="dropSub"></span>
+        </div>
+      </div>
+      <input type="file" id="fitxers" class="hidden" multiple accept=".zip,.txt,.md">
+      <p class="note" data-th="nota"></p>
+    </div>
+    <div class="claus">
+      <div class="claus-cap">
+        <h3 data-t="clausTitol"></h3>
+        <div class="switch-row">
+          <label class="switch">
+            <input type="checkbox" id="protAvancada">
+            <span class="track"></span>
+            <span data-t="protAvancada"></span>
+          </label>
+        </div>
+      </div>
+      <div id="clausCos" hidden>
+      <ul id="llistaClaus"></ul>
+      <div class="drop drop-claus" id="dropClaus" tabindex="0" role="button" data-tt="clausDropAria">
+        <svg class="drop-icona" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16 7l3 3M14 9l2 2"/></svg>
+        <div>
+          <strong data-t="clausDropTitol"></strong>
+          <span data-t="clausDropSub"></span>
+        </div>
+      </div>
+      <input type="file" id="fitxersClaus" class="hidden" multiple accept=".json">
+      </div>
+      <p class="note" id="missatgeClaus" hidden></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <h2 class="card-title" data-t="resultats"></h2>
+      <div class="xips">
+        <span class="xip"><b id="sFitxers">0</b> <span data-t="xConverses"></span></span>
+        <span class="xip ok"><b id="sOk">0</b> <span data-t="xOk"></span></span>
+        <span class="xip warn"><b id="sWarn">0</b> <span data-t="xWarn"></span></span>
+        <span class="xip err"><b id="sErr">0</b> <span data-t="xErr"></span></span>
+      </div>
+      <div class="sel-botons">
+        <button type="button" class="btn btn-secondary btn-sm" id="btnSeleccionar" onclick="alternarModeSeleccio()" disabled>Seleccionar</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnSelTot" onclick="seleccionarTot()" disabled>Seleccionar tot</button>
+      </div>
+    </div>
+    <div class="taula-wrap">
+      <table id="taulaResultats">
+        <thead><tr id="capcalera"></tr></thead>
+        <tbody id="files"></tbody>
+      </table>
+    </div>
+    <div class="buit" id="buit" data-t="buit"></div>
+    <div class="accions">
+      <button class="btn btn-secondary" id="btnEsborrar" onclick="esborrar(this)" disabled>Esborrar-ho tot</button>
+      <button class="btn btn-primary" id="btnExcel" onclick="descarregarExcel()" disabled data-t="excel"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Panell lateral: la conversa d'un alumne -->
+<div class="xat-fons" onclick="ampliarXat(false)"></div>
+<aside id="xat" class="xat" aria-hidden="true" aria-labelledby="xatNom">
+  <div class="xat-vora" id="xatVora" data-tt="vora"></div>
+  <div class="xat-cap">
+    <div class="titols"><h2 id="xatNom"></h2><p id="xatFitxer"></p></div>
+    <div class="xat-botons">
+      <button type="button" id="xatAnt" onclick="moureXat(-1)" data-tt="ant">‹</button>
+      <button type="button" id="xatSeg" onclick="moureXat(1)" data-tt="seg">›</button>
+      <button type="button" id="xatAmpliar" onclick="ampliarXat()" title="Ampliar" aria-label="Ampliar"></button>
+      <button type="button" onclick="tancarXat()" data-tt="tancar">×</button>
+    </div>
+  </div>
+  <label class="xat-opcions"><input type="checkbox" id="xatOcultes"> <span data-t="ocultes"></span></label>
+  <div class="xat-cos" id="xatCos"></div>
+</aside>
+
+<!-- Finestra: guia o detall d'una conversa -->
+<div id="modal" class="modal-overlay" onclick="if (event.target === this) tancarModal()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitol">
+    <div class="modal-head">
+      <div><h2 id="mTitol"></h2><p id="mSub"></p></div>
+      <button type="button" class="modal-close" onclick="tancarModal()" data-tt="tancar">×</button>
+    </div>
+    <div class="modal-body" id="mCos"></div>
+  </div>
+</div>
+
+<script>
+/* =========================================================================
+   AVALUADOR DE CONVERSES — llegeix la línia oculta REF dels clients simulats
+   (ClientGenerator v0.6.3 o posterior):
+     [//]: # (REF: ID-c1-c2-…-cN-P)
+   ID → quina clau s'ha fet servir (la bàsica, que porta l'eina, o la d'un client carregat amb el seu JSON)
+   c1…cN → un codi per fila de la taula de codis, en l'ordre de la clau; cada codi indica el nivell (0–4 o N/O)
+   P → avaluació provisional (sí / no)
+   Converses sense línia REF: es llegeix la taula visible del resum, sense poder-la verificar.
+   ========================================================================= */
+/* =========================================================================
+   TEXTOS DE LA INTERFÍCIE (català, castellà i anglès)
+   ========================================================================= */
+const TEXTOS = {
+  cat: {
+    titol: "Avaluador de converses", subtitol: "Recull les notes dels clients simulats i les passa a un Excel",
+    tema: "Mode fosc / clar", ajuda: "Com funciona",
+    cardConverses: "Converses dels alumnes",
+    dropTitol: "Arrossega aquí el .zip de l'Atenea o els .txt", dropSub: "o fes clic per triar-los",
+    clausDropTitol: "Arrossega aquí el JSON del client", clausDropSub: "o fes clic per triar-lo", clausDropAria: "Tria el JSON d'un client",
+    msgNoClient: n => `${n}: no és un client del Generador de Clients.`, dropAria: "Tria fitxers",
+    nota: "Els fitxers es llegeixen al teu navegador: no s'envien enlloc. Les notes són <strong>propostes de la IA</strong>: revisa els avisos i comprova'n alguna.",
+    clausTitol: "Claus dels clients", protAvancada: "Protecció avançada",
+    oblidarTitle: "Oblidar aquesta clau (les seves converses no es podran verificar fins que tornis a carregar el JSON)", oblidarAria: n => `Oblidar la clau de ${n}`, oblidar: "Oblidar?",
+    msgCarregat: n => `Clau desada: ${n}.`, msgBasic: n => `${n}: protecció bàsica, no cal carregar-lo.`, msgAntic: n => `${n}: sense protecció de notes (anterior a la v0.6.3).`,
+    resultats: "Resultats", xConverses: "converses", xOk: "sense avisos", xWarn: "amb avisos", xErr: "a revisar",
+    seleccionar: "Seleccionar", cancellar: "Cancel·lar", selTot: "Seleccionar tot", deselTot: "Deseleccionar tot",
+    buit: "Encara no hi ha cap conversa.",
+    esborrarTot: "Esborrar-ho tot", esborrarSel: n => `Esborrar les seleccionades (${n})`,
+    confTot: "Segur? Torna a clicar per esborrar-ho tot", confSel: n => `Segur? Torna a clicar per esborrar-ne ${n}`,
+    excel: "Descarregar Excel",
+    colAlumne: "Alumne", colTotal: "Total", colAvisos: "Avisos",
+    veureTitle: "Veure la conversa", veureAria: n => `Veure la conversa de ${n}`,
+    treureTitle: "Treure aquesta conversa", treureAria: n => `Treure la conversa de ${n}`, treure: "Treure?",
+    crit: { A: "Preguntes", B: "Requisits", C: "Context i stakeholders", D: "Negoci", E: "Incertesa", F: "Comunicació", G: "Adaptació al client", H: "Gènere", I: "Sostenibilitat" },
+    origenBasic: "Codi (protecció bàsica)", origenClau: (n, id) => `Codi (${n} · ${id})`, origenTaula: "Taula (sense verificar)",
+    avLectura: "No s'ha pogut llegir el fitxer.",
+    avFormat: "No té el format de conversa de l'Open WebUI; s'ha llegit com a text.",
+    avRefAlumne: "Hi ha una línia REF escrita per l'alumne (s'ignora).",
+    avSenseAval: "No s'ha trobat cap avaluació (l'alumne no va escriure el codi o no va arribar al resum).",
+    avDiverses: n => `Hi ha ${n} línies REF: es fa servir l'última.`,
+    difItem: (k, a, b) => `${k} (taula ${a}, codi ${b})`,
+    avTaulaDif: l => `La taula visible no coincideix amb el codi a ${l}. Es fa servir el codi.`,
+    avTotalDif: (v, c) => `El total visible (${v}) no quadra amb el calculat a partir del codi (${c}). Es fa servir el calculat.`,
+    avSenseTaula: "No s'ha trobat la taula visible de l'avaluació per comparar-la.",
+    avClauDesc: id => `La línia REF és d'un client que no has carregat (clau ${id}). Arrossega'n el JSON per verificar-la.`,
+    avNombre: "La línia REF no té el nombre de codis esperat: pot estar manipulada o mal copiada pel model.",
+    avCodis: p => `La línia REF té codis que no són vàlids (posicions ${p}): pot estar manipulada o mal copiada pel model.`,
+    avSenseRef: "Sense línia REF (client anterior a la v0.6.3, o línia esborrada): no es pot verificar la nota.",
+    avFalten: l => `Falten criteris a la taula: ${l}.`,
+    avProv: "El client va marcar l'avaluació com a provisional (poca evidència).",
+    avDosFitxers: "Aquest alumne té més d'un fitxer.",
+    avIdentica: n => `Conversa idèntica a la lliurada per: ${n}.`,
+    dAvisos: "Avisos", dCap: "Cap.", dDades: "Dades", dTotal: "Total", dProv: "Provisional", dPerfil: "Perfil del client", dTorns: "Torns del client",
+    dInterv: "Intervencions de l'alumne durant la reunió", dMissatge: "Missatge de l'avaluació", si: "Sí", no: "No",
+    client: "Client", tagAval: "Avaluació", senseMissatges: "No hi ha missatges per mostrar.",
+    ant: "Alumne anterior", seg: "Alumne següent", ampliar: "Ampliar", costat: "Tornar al costat", tancar: "Tancar",
+    ocultes: "Mostra les línies ocultes (perfil, torn, codi REF…)", vora: "Arrossega per canviar l'amplada (doble clic: amplada per defecte)",
+    guiaTitol: "Com funciona", guiaSub: "Del xat de l'alumne a l'Excel del professor",
+    guia: `
+      <h3>Abans de l'activitat</h3>
+      <ol>
+        <li>Fes el client amb el <strong>Generador de Clients v0.6.3</strong> o posterior. En acabar l'avaluació, el client escriu una línia oculta i xifrada amb les notes (<code>[//]: # (REF: …)</code>).</li>
+        <li>Amb el mode avançat del generador, a la pestanya <strong>Avaluació</strong> pots triar la protecció: <strong>bàsica</strong> (aquesta eina ja la coneix) o <strong>avançada</strong> (una clau pròpia del client, que l'eina llegeix del seu JSON).</li>
+        <li>Crea una <strong>tasca</strong> a l'Atenea amb lliurament de fitxers.</li>
+      </ol>
+      <h3>Alumnes</h3>
+      <ol>
+        <li>Quan acabin l'entrevista i vegin l'avaluació, al menú <strong>⋯</strong> de la conversa trien <strong>Download → Plain text (.txt)</strong>.</li>
+        <li>Pugen aquest .txt a la tasca, sense editar-lo. No cal canviar-li el nom.</li>
+      </ol>
+      <h3>Professor</h3>
+      <ol>
+        <li>A la tasca, <strong>Mostra totes les trameses → Baixa totes les trameses</strong>. L'Atenea en fa un .zip amb el nom de cada alumne.</li>
+        <li>Arrossega el .zip a la zona gran. Si el client té protecció avançada, activa <strong>Protecció avançada</strong> i, el primer cop, arrossega-hi el JSON del client: la clau queda desada en aquest navegador.</li>
+        <li>Revisa els avisos, descarrega l'Excel i omple la columna <strong>Nota validada</strong>.</li>
+      </ol>
+      <h3>Què comprova</h3>
+      <ul>
+        <li>Desxifra la línia REF i en treu les notes. Si l'alumne ha tocat la taula visible, la nota que compta és la del codi, i l'eina avisa.</li>
+        <li>Avisa si la línia falta, té codis inventats o fora de lloc, o és d'un client que no has carregat.</li>
+        <li>Calcula el total amb la fórmula de la rúbrica: 1,5 × (A + B) + C + … + I, sense els N/O i normalitzat.</li>
+        <li>Detecta converses idèntiques lliurades per alumnes diferents, alumnes amb més d'un fitxer i avaluacions provisionals.</li>
+      </ul>
+      <p class="note">La protecció evita que es canviï la nota editant el fitxer, però no detecta si l'alumne ha retocat les seves preguntes o ha regenerat l'avaluació. Les notes són propostes: el professor decideix.</p>`,
+    xl: { alumne: "Alumne", id: "ID Atenea", fitxer: "Fitxer", total: "Total proposat", prov: "Provisional", perfil: "Perfil del client", torns: "Torns del client",
+          interv: "Intervencions alumne", origen: "Origen de les notes", estat: "Estat", avisos: "Avisos", validada: "Nota validada", mitjana: "Mitjana",
+          ok: "OK", warn: "Amb avisos", err: "Revisar", full: "Notes", nom: "avaluacions" }
+  },
+  es: {
+    titol: "Evaluador de conversaciones", subtitol: "Recoge las notas de los clientes simulados y las pasa a un Excel",
+    tema: "Modo oscuro / claro", ajuda: "Cómo funciona",
+    cardConverses: "Conversaciones de los alumnos",
+    dropTitol: "Arrastra aquí el .zip de Atenea o los .txt", dropSub: "o haz clic para elegirlos",
+    clausDropTitol: "Arrastra aquí el JSON del cliente", clausDropSub: "o haz clic para elegirlo", clausDropAria: "Elegir el JSON de un cliente",
+    msgNoClient: n => `${n}: no es un cliente del Generador de Clientes.`, dropAria: "Elegir archivos",
+    nota: "Los archivos se leen en tu navegador: no se envían a ningún sitio. Las notas son <strong>propuestas de la IA</strong>: revisa los avisos y comprueba alguna.",
+    clausTitol: "Claves de los clientes", protAvancada: "Protección avanzada",
+    oblidarTitle: "Olvidar esta clave (sus conversaciones no se podrán verificar hasta que vuelvas a cargar el JSON)", oblidarAria: n => `Olvidar la clave de ${n}`, oblidar: "¿Olvidar?",
+    msgCarregat: n => `Clave guardada: ${n}.`, msgBasic: n => `${n}: protección básica, no hace falta cargarlo.`, msgAntic: n => `${n}: sin protección de notas (anterior a la v0.6.3).`,
+    resultats: "Resultados", xConverses: "conversaciones", xOk: "sin avisos", xWarn: "con avisos", xErr: "a revisar",
+    seleccionar: "Seleccionar", cancellar: "Cancelar", selTot: "Seleccionar todo", deselTot: "Deseleccionar todo",
+    buit: "Todavía no hay ninguna conversación.",
+    esborrarTot: "Borrarlo todo", esborrarSel: n => `Borrar las seleccionadas (${n})`,
+    confTot: "¿Seguro? Vuelve a hacer clic para borrarlo todo", confSel: n => `¿Seguro? Vuelve a hacer clic para borrar ${n}`,
+    excel: "Descargar Excel",
+    colAlumne: "Alumno", colTotal: "Total", colAvisos: "Avisos",
+    veureTitle: "Ver la conversación", veureAria: n => `Ver la conversación de ${n}`,
+    treureTitle: "Quitar esta conversación", treureAria: n => `Quitar la conversación de ${n}`, treure: "¿Quitar?",
+    crit: { A: "Preguntas", B: "Requisitos", C: "Contexto y stakeholders", D: "Negocio", E: "Incertidumbre", F: "Comunicación", G: "Adaptación al cliente", H: "Género", I: "Sostenibilidad" },
+    origenBasic: "Código (protección básica)", origenClau: (n, id) => `Código (${n} · ${id})`, origenTaula: "Tabla (sin verificar)",
+    avLectura: "No se ha podido leer el archivo.",
+    avFormat: "No tiene el formato de conversación de Open WebUI; se ha leído como texto.",
+    avRefAlumne: "Hay una línea REF escrita por el alumno (se ignora).",
+    avSenseAval: "No se ha encontrado ninguna evaluación (el alumno no escribió el código o no llegó al resumen).",
+    avDiverses: n => `Hay ${n} líneas REF: se usa la última.`,
+    difItem: (k, a, b) => `${k} (tabla ${a}, código ${b})`,
+    avTaulaDif: l => `La tabla visible no coincide con el código en ${l}. Se usa el código.`,
+    avTotalDif: (v, c) => `El total visible (${v}) no cuadra con el calculado a partir del código (${c}). Se usa el calculado.`,
+    avSenseTaula: "No se ha encontrado la tabla visible de la evaluación para compararla.",
+    avClauDesc: id => `La línea REF es de un cliente que no has cargado (clave ${id}). Arrastra su JSON para verificarla.`,
+    avNombre: "La línea REF no tiene el número de códigos esperado: puede estar manipulada o mal copiada por el modelo.",
+    avCodis: p => `La línea REF tiene códigos no válidos (posiciones ${p}): puede estar manipulada o mal copiada por el modelo.`,
+    avSenseRef: "Sin línea REF (cliente anterior a la v0.6.3, o línea borrada): no se puede verificar la nota.",
+    avFalten: l => `Faltan criterios en la tabla: ${l}.`,
+    avProv: "El cliente marcó la evaluación como provisional (poca evidencia).",
+    avDosFitxers: "Este alumno tiene más de un archivo.",
+    avIdentica: n => `Conversación idéntica a la entregada por: ${n}.`,
+    dAvisos: "Avisos", dCap: "Ninguno.", dDades: "Datos", dTotal: "Total", dProv: "Provisional", dPerfil: "Perfil del cliente", dTorns: "Turnos del cliente",
+    dInterv: "Intervenciones del alumno durante la reunión", dMissatge: "Mensaje de la evaluación", si: "Sí", no: "No",
+    client: "Cliente", tagAval: "Evaluación", senseMissatges: "No hay mensajes que mostrar.",
+    ant: "Alumno anterior", seg: "Alumno siguiente", ampliar: "Ampliar", costat: "Volver al lateral", tancar: "Cerrar",
+    ocultes: "Mostrar las líneas ocultas (perfil, turno, código REF…)", vora: "Arrastra para cambiar el ancho (doble clic: ancho por defecto)",
+    guiaTitol: "Cómo funciona", guiaSub: "Del chat del alumno al Excel del profesor",
+    guia: `
+      <h3>Antes de la actividad</h3>
+      <ol>
+        <li>Crea el cliente con el <strong>Generador de Clientes v0.6.3</strong> o posterior. Al terminar la evaluación, el cliente escribe una línea oculta y cifrada con las notas (<code>[//]: # (REF: …)</code>).</li>
+        <li>Con el modo avanzado del generador, en la pestaña <strong>Evaluación</strong> puedes elegir la protección: <strong>básica</strong> (esta herramienta ya la conoce) o <strong>avanzada</strong> (una clave propia del cliente, que la herramienta lee de su JSON).</li>
+        <li>Crea una <strong>tarea</strong> en Atenea con entrega de archivos.</li>
+      </ol>
+      <h3>Alumnos</h3>
+      <ol>
+        <li>Cuando terminen la entrevista y vean la evaluación, en el menú <strong>⋯</strong> de la conversación eligen <strong>Download → Plain text (.txt)</strong>.</li>
+        <li>Suben este .txt a la tarea, sin editarlo. No hace falta cambiarle el nombre.</li>
+      </ol>
+      <h3>Profesor</h3>
+      <ol>
+        <li>En la tarea, <strong>Ver todas las entregas → Descargar todas las entregas</strong>. Atenea genera un .zip con el nombre de cada alumno.</li>
+        <li>Arrastra el .zip a la zona grande. Si el cliente tiene protección avanzada, activa <strong>Protección avanzada</strong> y, la primera vez, arrastra allí el JSON del cliente: la clave queda guardada en este navegador.</li>
+        <li>Revisa los avisos, descarga el Excel y rellena la columna <strong>Nota validada</strong>.</li>
+      </ol>
+      <h3>Qué comprueba</h3>
+      <ul>
+        <li>Descifra la línea REF y obtiene las notas. Si el alumno ha tocado la tabla visible, la nota que cuenta es la del código, y la herramienta avisa.</li>
+        <li>Avisa si la línea falta, tiene códigos inventados o fuera de lugar, o es de un cliente que no has cargado.</li>
+        <li>Calcula el total con la fórmula de la rúbrica: 1,5 × (A + B) + C + … + I, sin los N/O y normalizado.</li>
+        <li>Detecta conversaciones idénticas entregadas por alumnos distintos, alumnos con más de un archivo y evaluaciones provisionales.</li>
+      </ul>
+      <p class="note">La protección evita que se cambie la nota editando el archivo, pero no detecta si el alumno ha retocado sus preguntas o ha regenerado la evaluación. Las notas son propuestas: decide el profesor.</p>`,
+    xl: { alumne: "Alumno", id: "ID Atenea", fitxer: "Archivo", total: "Total propuesto", prov: "Provisional", perfil: "Perfil del cliente", torns: "Turnos del cliente",
+          interv: "Intervenciones alumno", origen: "Origen de las notas", estat: "Estado", avisos: "Avisos", validada: "Nota validada", mitjana: "Media",
+          ok: "OK", warn: "Con avisos", err: "Revisar", full: "Notas", nom: "evaluaciones" }
+  },
+  en: {
+    titol: "Conversation Assessor", subtitol: "Collects the grades from simulated clients and exports them to Excel",
+    tema: "Dark / light mode", ajuda: "How it works",
+    cardConverses: "Student conversations",
+    dropTitol: "Drop the Atenea .zip or the .txt files here", dropSub: "or click to choose them",
+    clausDropTitol: "Drop the client's JSON here", clausDropSub: "or click to choose it", clausDropAria: "Choose a client's JSON",
+    msgNoClient: n => `${n}: not a Client Generator client.`, dropAria: "Choose files",
+    nota: "Files are read in your browser: they are not sent anywhere. Grades are <strong>AI proposals</strong>: check the warnings and spot-check a few.",
+    clausTitol: "Client keys", protAvancada: "Advanced protection",
+    oblidarTitle: "Forget this key (its conversations can't be verified until you load the JSON again)", oblidarAria: n => `Forget the key of ${n}`, oblidar: "Forget?",
+    msgCarregat: n => `Key saved: ${n}.`, msgBasic: n => `${n}: basic protection, no need to load it.`, msgAntic: n => `${n}: no grade protection (earlier than v0.6.3).`,
+    resultats: "Results", xConverses: "conversations", xOk: "no warnings", xWarn: "with warnings", xErr: "to review",
+    seleccionar: "Select", cancellar: "Cancel", selTot: "Select all", deselTot: "Deselect all",
+    buit: "No conversations yet.",
+    esborrarTot: "Delete all", esborrarSel: n => `Delete selected (${n})`,
+    confTot: "Sure? Click again to delete everything", confSel: n => `Sure? Click again to delete ${n}`,
+    excel: "Download Excel",
+    colAlumne: "Student", colTotal: "Total", colAvisos: "Warnings",
+    veureTitle: "View the conversation", veureAria: n => `View ${n}'s conversation`,
+    treureTitle: "Remove this conversation", treureAria: n => `Remove ${n}'s conversation`, treure: "Remove?",
+    crit: { A: "Questions", B: "Requirements", C: "Context & stakeholders", D: "Business", E: "Uncertainty", F: "Communication", G: "Adapting to the client", H: "Gender", I: "Sustainability" },
+    origenBasic: "Code (basic protection)", origenClau: (n, id) => `Code (${n} · ${id})`, origenTaula: "Table (not verified)",
+    avLectura: "The file could not be read.",
+    avFormat: "Not in the Open WebUI conversation format; read as plain text.",
+    avRefAlumne: "There is a REF line written by the student (ignored).",
+    avSenseAval: "No assessment found (the student didn't type the code or didn't reach the summary).",
+    avDiverses: n => `There are ${n} REF lines: the last one is used.`,
+    difItem: (k, a, b) => `${k} (table ${a}, code ${b})`,
+    avTaulaDif: l => `The visible table doesn't match the code in ${l}. The code is used.`,
+    avTotalDif: (v, c) => `The visible total (${v}) doesn't match the one calculated from the code (${c}). The calculated one is used.`,
+    avSenseTaula: "The visible assessment table was not found, so it couldn't be compared.",
+    avClauDesc: id => `The REF line belongs to a client you haven't loaded (key ${id}). Drop its JSON to verify it.`,
+    avNombre: "The REF line doesn't have the expected number of codes: it may have been tampered with or miscopied by the model.",
+    avCodis: p => `The REF line has invalid codes (positions ${p}): it may have been tampered with or miscopied by the model.`,
+    avSenseRef: "No REF line (client earlier than v0.6.3, or line deleted): the grade can't be verified.",
+    avFalten: l => `Criteria missing from the table: ${l}.`,
+    avProv: "The client marked the assessment as provisional (little evidence).",
+    avDosFitxers: "This student has more than one file.",
+    avIdentica: n => `Identical to the conversation submitted by: ${n}.`,
+    dAvisos: "Warnings", dCap: "None.", dDades: "Data", dTotal: "Total", dProv: "Provisional", dPerfil: "Client profile", dTorns: "Client turns",
+    dInterv: "Student contributions during the meeting", dMissatge: "Assessment message", si: "Yes", no: "No",
+    client: "Client", tagAval: "Assessment", senseMissatges: "No messages to show.",
+    ant: "Previous student", seg: "Next student", ampliar: "Expand", costat: "Back to the side", tancar: "Close",
+    ocultes: "Show hidden lines (profile, turn, REF code…)", vora: "Drag to change the width (double-click: default width)",
+    guiaTitol: "How it works", guiaSub: "From the student's chat to the teacher's Excel file",
+    guia: `
+      <h3>Before the activity</h3>
+      <ol>
+        <li>Create the client with the <strong>Client Generator v0.6.3</strong> or later. When the assessment ends, the client writes a hidden, encoded line with the grades (<code>[//]: # (REF: …)</code>).</li>
+        <li>With the generator's advanced mode, in the <strong>Assessment</strong> tab you can choose the protection: <strong>basic</strong> (this tool already knows it) or <strong>advanced</strong> (a key of the client's own, which the tool reads from its JSON).</li>
+        <li>Create an <strong>assignment</strong> in Atenea with file submission.</li>
+      </ol>
+      <h3>Students</h3>
+      <ol>
+        <li>When they finish the interview and see the assessment, in the conversation's <strong>⋯</strong> menu they choose <strong>Download → Plain text (.txt)</strong>.</li>
+        <li>They upload this .txt to the assignment without editing it. No need to rename it.</li>
+      </ol>
+      <h3>Teacher</h3>
+      <ol>
+        <li>In the assignment, <strong>View all submissions → Download all submissions</strong>. Atenea creates a .zip with each student's name.</li>
+        <li>Drop the .zip into the large area. If the client uses advanced protection, turn on <strong>Advanced protection</strong> and, the first time, drop the client's JSON there: the key is saved in this browser.</li>
+        <li>Check the warnings, download the Excel file and fill in the <strong>Validated grade</strong> column.</li>
+      </ol>
+      <h3>What it checks</h3>
+      <ul>
+        <li>It decodes the REF line to get the grades. If the student has edited the visible table, the grade that counts is the code's, and the tool warns you.</li>
+        <li>It warns if the line is missing, has made-up or misplaced codes, or belongs to a client you haven't loaded.</li>
+        <li>It calculates the total with the rubric's formula: 1.5 × (A + B) + C + … + I, leaving out N/O and normalising.</li>
+        <li>It detects identical conversations submitted by different students, students with more than one file, and provisional assessments.</li>
+      </ul>
+      <p class="note">The protection stops grades from being changed by editing the file, but it can't detect whether the student edited their own questions or regenerated the assessment. Grades are proposals: the teacher decides.</p>`,
+    xl: { alumne: "Student", id: "Atenea ID", fitxer: "File", total: "Proposed total", prov: "Provisional", perfil: "Client profile", torns: "Client turns",
+          interv: "Student contributions", origen: "Source of grades", estat: "Status", avisos: "Warnings", validada: "Validated grade", mitjana: "Average",
+          ok: "OK", warn: "With warnings", err: "Review", full: "Grades", nom: "assessments" }
+  }
+};
+let idioma = "cat";
+const T = () => TEXTOS[idioma] || TEXTOS.cat;
+
+const VERSIO = "v0.2";
+
+/* Clau bàsica: ha de ser idèntica a la del generador (CLAU_BASICA) */
+const CLAU_BASICA = {"id": "N6E", "ordre": ["D", "H1", "G", "A", "F", "C", "H", "I", "B", "E"], "codis": {"A": ["82G", "94A", "Q6J", "MQU", "P24", "7XU"], "B": ["XF7", "GKE", "XKD", "PMG", "XQ8", "CAK"], "C": ["CWJ", "FPR", "RM6", "X33", "F48", "GE4"], "D": ["8PK", "2RH", "2N3", "2YA", "AHR", "CM6"], "E": ["MAT", "2YQ", "CCG", "V29", "HMM", "MX4"], "F": ["NC4", "KWF", "RJY", "YXA", "8Y6", "HQG"], "G": ["DM4", "279", "MAR", "8JQ", "9GN", "9XH"], "H": ["HYE", "EH9", "6C3", "N7G", "PFJ", "WXF"], "H1": ["FNY", "YGG", "3J4", "HWN", "9YX", "X2Q"], "I": ["8EK", "DHR", "DDX", "UA7", "DTQ", "YVT"]}, "prov": {"no": "GVX", "si": "GYT"}};
+
+const CRITERIS = [
+  { k: "A", nom: "Preguntes", pes: 15 },
+  { k: "B", nom: "Requisits", pes: 15 },
+  { k: "C", nom: "Context i stakeholders", pes: 10 },
+  { k: "D", nom: "Negoci", pes: 10 },
+  { k: "E", nom: "Incertesa", pes: 10 },
+  { k: "F", nom: "Comunicació", pes: 10 },
+  { k: "G", nom: "Adaptació al client", pes: 10 },
+  { k: "H", nom: "Gènere", pes: 10 },
+  { k: "I", nom: "Sostenibilitat", pes: 10 }
+];
+const TOLERANCIA = 0.15;   // diferència admesa entre totals (arrodoniments)
+const NO = "N/O";
+const CLAU_DESAT = "avaluador_claus";
+
+let entrades = [];         // fitxers de conversa carregats: { uid, ruta, text }
+let comptadorUid = 0;
+const seleccio = new Set(); // uid de les converses seleccionades
+let resultats = [];
+const claus = new Map();   // id → { clau, nom, desat }
+let missatgesClaus = [];   // resultat de l'última càrrega de JSON: { tipus: "carregat" | "basic" | "antic", nom }
+
+const $ = id => document.getElementById(id);
+
+/* ===== Claus dels clients (protecció avançada) ===== */
+const RE_CODI = /^[A-Z0-9]{3}$/;
+
+/* Llegeix la clau de la taula de codis del prompt del client */
+function clauDelPrompt(sp) {
+  const mId = sp.match(/\(REF: ([A-Z0-9]{3})-…\)/);
+  const mProv = sp.match(/([A-Z0-9]{3}) si l'avaluació no és provisional, o ([A-Z0-9]{3}) si l'has marcada/);
+  if (!mId || !mProv) return null;
+  const ordre = [], codis = {};
+  for (const m of sp.matchAll(/^\| \d+ \| (H1|H2|[A-I]) \| ([A-Z0-9]{3}(?: \| [A-Z0-9]{3}){5}) \|$/gm)) {
+    const f = m[1] === "H2" ? "H" : m[1];
+    if (codis[f]) return null;
+    ordre.push(f);
+    codis[f] = m[2].split(" | ");
+  }
+  const clau = { id: mId[1], ordre, codis, prov: { no: mProv[1], si: mProv[2] } };
+  return clauValida(clau) ? clau : null;
+}
+
+function clauValida(c) {
+  try {
+    const necessaries = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+    if (!RE_CODI.test(c.id) || !RE_CODI.test(c.prov.no) || !RE_CODI.test(c.prov.si)) return false;
+    if (!necessaries.every(f => c.ordre.includes(f))) return false;
+    if (!c.ordre.every(f => Array.isArray(c.codis[f]) && c.codis[f].length === 6 && c.codis[f].every(x => RE_CODI.test(x)))) return false;
+    const tots = [c.id, c.prov.no, c.prov.si, ...c.ordre.flatMap(f => c.codis[f])];
+    return new Set(tots).size === tots.length;
+  } catch (e) { return false; }
+}
+
+/* JSON d'un client del generador (o exportat de LAMB) */
+function esClient(d) {
+  const a = Array.isArray(d) ? d[0] : d;
+  return !!a && typeof a === "object" && (typeof a.system_prompt === "string" || !!a._config);
+}
+
+function carregarClient(d, nomFitxer) {
+  const a = Array.isArray(d) ? d[0] : d;
+  const nom = (a.name || (a._config && a._config.assistantName) || nomFitxer.replace(/\.json$/i, "")).trim();
+  let clau = typeof a.system_prompt === "string" ? clauDelPrompt(a.system_prompt) : null;
+  if (!clau && a._config && a._config.avaluacio && a._config.avaluacio.proteccio === "avancada" && clauValida(a._config.avaluacio.clau)) clau = a._config.avaluacio.clau;
+  if (!clau) {
+    missatgesClaus.push({ tipus: "antic", nom });
+    return;
+  }
+  if (clau.id === CLAU_BASICA.id) {
+    missatgesClaus.push({ tipus: "basic", nom });
+    return;
+  }
+  claus.set(clau.id, { clau, nom, desat: Date.now() });
+  desarClaus();
+  missatgesClaus.push({ tipus: "carregat", nom });
+  activarProteccio();
+}
+
+/* Commutador «Protecció avançada»: només mostra o amaga el panell de claus.
+   Les claus desades es fan servir sempre, estigui com estigui el commutador. */
+function posarProteccio(on) {
+  $("protAvancada").checked = on;
+  $("clausCos").hidden = !on;
+}
+
+/* S'activa sol quan cal (client avançat carregat o conversa amb una clau que no tenim) */
+function activarProteccio() {
+  if ($("protAvancada").checked) return;
+  posarProteccio(true);
+  const fila = $("protAvancada").closest(".switch-row");
+  fila.classList.remove("sacseig");
+  void fila.offsetWidth;
+  fila.classList.add("sacseig");
+  fila.addEventListener("animationend", e => { if (e.target === fila) fila.classList.remove("sacseig"); });
+}
+
+function desarClaus() {
+  try { localStorage.setItem(CLAU_DESAT, JSON.stringify([...claus.values()])); } catch (e) {}
+}
+
+function llegirClausDesades() {
+  try {
+    const llista = JSON.parse(localStorage.getItem(CLAU_DESAT) || "[]");
+    llista.forEach(e => { if (e && clauValida(e.clau)) claus.set(e.clau.id, e); });
+  } catch (e) {}
+}
+
+/* Confirmació sense finestres del navegador: el primer clic canvia el botó («Segur?…»)
+   i només el segon, dins d'uns segons, fa l'acció. Si no es torna a clicar, el botó torna a ser com era. */
+function confirmarAmbDobleClic(btn, text, accio) {
+  if (btn.classList.contains("confirmant")) {
+    clearTimeout(btn._t);
+    btn.innerHTML = btn.dataset.original;
+    btn.classList.remove("confirmant");
+    accio();
+    if (btn.id === "btnEsborrar") actualitzarSeleccio();
+    return;
+  }
+  btn.dataset.original = btn.innerHTML;
+  btn.innerHTML = text;
+  btn.classList.add("confirmant");
+  btn._t = setTimeout(() => {
+    btn.innerHTML = btn.dataset.original;
+    btn.classList.remove("confirmant");
+    if (btn.id === "btnEsborrar") actualitzarSeleccio();
+  }, 3500);
+}
+
+function treureClau(id, btn) {
+  const e = claus.get(id);
+  if (!e) return;
+  if (btn) { confirmarAmbDobleClic(btn, T().oblidar, () => oblidarClau(id)); return; }
+  oblidarClau(id);
+}
+
+function oblidarClau(id) {
+  claus.delete(id);
+  desarClaus();
+  missatgesClaus = [];
+  analitzarTot();
+}
+
+function pintarClaus() {
+  const files = [...claus.values()].sort((a, b) => a.nom.localeCompare(b.nom, "ca"));
+  const x = T();
+  $("llistaClaus").innerHTML = files.map(e => `<li class="clau-fila"><span>${esc(e.nom)}</span><span class="clau-meta"><code>${esc(e.clau.id)}</code><button type="button" class="treure" title="${esc(x.oblidarTitle)}" aria-label="${esc(x.oblidarAria(e.nom))}" onclick="treureClau('${esc(e.clau.id)}', this)">×</button></span></li>`).join("");
+  // Resum curt de l'última càrrega de JSON; desapareix sol al cap d'uns segons
+  const noms = tipus => missatgesClaus.filter(x => x.tipus === tipus).map(x => `«${esc(x.nom)}»`).join(", ");
+  const linies = [
+    noms("carregat") && `<span class="av-ok">${x.msgCarregat(noms("carregat"))}</span>`,
+    noms("basic") && `<span class="av-ok">${x.msgBasic(noms("basic"))}</span>`,
+    noms("antic") && `<span class="av-warn">${x.msgAntic(noms("antic"))}</span>`,
+    noms("noClient") && `<span class="av-err">${x.msgNoClient(noms("noClient"))}</span>`
+  ].filter(Boolean);
+  const m = $("missatgeClaus");
+  m.hidden = !linies.length;
+  m.innerHTML = linies.join("<br>");
+  clearTimeout(pintarClaus._t);
+  if (linies.length) pintarClaus._t = setTimeout(() => { missatgesClaus = []; m.hidden = true; }, 8000);
+}
+
+/* ===== Lectura dels fitxers ===== */
+async function afegirFitxers(llista) {
+  missatgesClaus = [];
+  const noves = [];
+  const tractar = (nom, text) => {
+    if (/\.json$/i.test(nom)) {
+      try {
+        const d = JSON.parse(text);
+        if (esClient(d)) { carregarClient(d, nom.split("/").at(-1)); return; }
+      } catch (e) { /* no és un JSON vàlid: es llegeix com a conversa */ }
+    }
+    if (entrades.some(e => e.ruta === nom && e.text === text) || noves.some(e => e.ruta === nom && e.text === text)) return;   // mateix fitxer dues vegades
+    noves.push({ uid: ++comptadorUid, ruta: nom, text });
+  };
+  for (const f of llista) {
+    const nom = f.name.toLowerCase();
+    try {
+      if (nom.endsWith(".zip")) {
+        for (const e of await llegirZip(await f.arrayBuffer())) {
+          if (/\.(txt|md|json)$/i.test(e.nom)) tractar(e.nom, e.text);
+        }
+      } else if (/\.(txt|md|json)$/.test(nom)) {
+        tractar(f.name, await f.text());
+      }
+    } catch (err) {
+      console.error(err);
+      noves.push({ uid: ++comptadorUid, ruta: f.name, text: "", error: true });
+    }
+  }
+  entrades.push(...noves);
+  analitzarTot();
+}
+
+/* Zona petita de «Claus dels clients»: només JSON del generador */
+async function afegirClients(llista) {
+  missatgesClaus = [];
+  for (const f of llista) {
+    let ok = false;
+    if (/\.json$/i.test(f.name)) {
+      try {
+        const d = JSON.parse(await f.text());
+        if (esClient(d)) { carregarClient(d, f.name); ok = true; }
+      } catch (e) { /* no és JSON vàlid */ }
+    }
+    if (!ok) missatgesClaus.push({ tipus: "noClient", nom: f.name });
+  }
+  analitzarTot();
+}
+
+function analitzarTot() {
+  resultats = entrades.map(e => ({ uid: e.uid, ...(e.error
+    ? { ruta: e.ruta, fitxer: e.ruta, ...nomAlumne(e.ruta), notes: {}, msgs: [], avisos: [{ n: "err", t: T().avLectura }], estat: "err" }
+    : analitzar(e.ruta, e.text)) }));
+  [...seleccio].forEach(u => { if (!entrades.some(e => e.uid === u)) seleccio.delete(u); });
+  marcarDuplicats();
+  resultats.sort((a, b) => a.alumne.localeCompare(b.alumne, "ca"));
+  if (resultats.some(r => r.clauDesconeguda)) activarProteccio();
+  pintar();
+  refrescarXat();
+}
+
+/* Lector de .zip mínim (sense llibreries): fitxers sense comprimir o amb deflate */
+async function llegirZip(buf) {
+  const v = new DataView(buf), u8 = new Uint8Array(buf);
+  let eocd = -1;
+  for (let i = buf.byteLength - 22; i >= Math.max(0, buf.byteLength - 65557); i--) {
+    if (v.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+  }
+  if (eocd < 0) throw new Error("No és un .zip vàlid");
+  const total = v.getUint16(eocd + 10, true);
+  let p = v.getUint32(eocd + 16, true);
+  const sortida = [];
+  for (let n = 0; n < total; n++) {
+    if (v.getUint32(p, true) !== 0x02014b50) break;
+    const metode = v.getUint16(p + 10, true);
+    const midaC = v.getUint32(p + 20, true);
+    const lNom = v.getUint16(p + 28, true), lExtra = v.getUint16(p + 30, true), lCom = v.getUint16(p + 32, true);
+    const offLocal = v.getUint32(p + 42, true);
+    const nom = new TextDecoder("utf-8").decode(u8.subarray(p + 46, p + 46 + lNom));
+    p += 46 + lNom + lExtra + lCom;
+    if (nom.endsWith("/") || nom.includes("__MACOSX")) continue;
+    const inici = offLocal + 30 + v.getUint16(offLocal + 26, true) + v.getUint16(offLocal + 28, true);
+    const dades = u8.subarray(inici, inici + midaC);
+    let bytes;
+    if (metode === 0) bytes = dades;
+    else if (metode === 8) bytes = new Uint8Array(await new Response(new Blob([dades]).stream().pipeThrough(new DecompressionStream("deflate-raw"))).arrayBuffer());
+    else continue;
+    sortida.push({ nom, text: new TextDecoder("utf-8").decode(bytes) });
+  }
+  return sortida;
+}
+
+/* Nom de l'alumne: el Moodle posa «Nom Cognoms_123456_assignsubmission_file_…» davant de cada fitxer */
+function nomAlumne(ruta) {
+  const parts = ruta.split("/");
+  for (const seg of parts) {
+    const m = seg.match(/^(.+?)_(\d+)_assignsubmission_/);
+    if (m) return { alumne: m[1].trim(), id: m[2] };
+  }
+  const base = parts.at(-1).replace(/\.[^.]+$/, "").replace(/^chat[-_]/i, "");
+  return { alumne: base.replace(/_/g, " ").trim() || ruta, id: "" };
+}
+
+/* Missatges de la conversa: .txt de l'Open WebUI («### USER» / «### ASSISTANT») o exportació .json */
+function missatges(text) {
+  const t = text.replace(/\r\n?/g, "\n").trim();
+  if (t.startsWith("[") || t.startsWith("{")) {
+    try {
+      let d = JSON.parse(t);
+      if (Array.isArray(d)) d = d[0];
+      const chat = d.chat || d;
+      const h = chat.history;
+      let llista = [];
+      if (h && h.messages && h.currentId) {
+        let id = h.currentId;
+        while (id && h.messages[id]) { llista.unshift(h.messages[id]); id = h.messages[id].parentId; }
+      } else if (Array.isArray(chat.messages)) llista = chat.messages;
+      return llista.map(m => ({ rol: m.role === "user" ? "user" : "assistant", text: typeof m.content === "string" ? m.content : "" }));
+    } catch (e) { /* no és JSON: es llegeix com a text */ }
+  }
+  const trossos = t.split(/^###\s*(USER|ASSISTANT|SYSTEM)\s*$/m);
+  if (trossos.length < 3) return [{ rol: "assistant", text: t, desconegut: true }];
+  const out = [];
+  for (let i = 1; i < trossos.length; i += 2) {
+    if (trossos[i] !== "SYSTEM") out.push({ rol: trossos[i] === "USER" ? "user" : "assistant", text: trossos[i + 1].trim() });
+  }
+  return out;
+}
+
+/* Números amb coma o punt; «N/O» com a no observable */
+function valor(s) {
+  const x = String(s || "").replace(/\*/g, "").trim();
+  if (/^n\s*\/?\s*[oa]\b/i.test(x)) return NO;
+  const m = x.match(/-?\d+(?:[.,]\d+)?/);
+  return m ? parseFloat(m[0].replace(",", ".")) : undefined;
+}
+
+const RE_REF = /\[\/\/\]:\s*#\s*\(\s*REF\s*:([^)\n]*)\)/gi;
+const RE_LINIA = /\[\/\/\]:\s*#\s*\((?:TORN|PERFIL)=/;
+
+/* Taula del resum: «| A. Qualitat de les preguntes (15%) | 7,5 | … |» */
+function llegirTaula(text) {
+  const notes = {};
+  for (const m of text.matchAll(/^\s*\|\s*\**\s*([A-I])\s*[.)][^|\n]*\|\s*([^|\n]*)\|/gm)) {
+    const v = valor(m[2]);
+    if (v !== undefined) notes[m[1]] = v;
+  }
+  return notes;
+}
+
+function totalVisible(text) {
+  const m = text.match(/total[^\n\d]{0,40}?(\d+(?:[.,]\d+)?)\s*\/\s*100/i);
+  return m ? parseFloat(m[1].replace(",", ".")) : undefined;
+}
+
+/* Nota final amb la fórmula de la rúbrica (N/O fora i normalitzat) */
+function recalcular(notes) {
+  let suma = 0, max = 0;
+  for (const c of CRITERIS) {
+    const v = notes[c.k];
+    if (v === NO) continue;
+    if (typeof v !== "number") return undefined;
+    suma += c.pes * v / 10;
+    max += c.pes;
+  }
+  return max ? Math.round(1000 * suma / max) / 10 : undefined;
+}
+
+const fmt = v => v === NO ? NO : (typeof v === "number" ? String(Math.round(v * 100) / 100).replace(".", ",") : "—");
+const igual = (a, b) => a === b || (typeof a === "number" && typeof b === "number" && Math.abs(a - b) < 0.01);
+
+/* Desxifra el contingut d'una línia REF */
+function desxifrar(cos) {
+  const parts = cos.toUpperCase().split(/[^A-Z0-9]+/).filter(Boolean);
+  if (parts.length < 3) return { error: "nombre" };
+  const id = parts[0];
+  const entrada = id === CLAU_BASICA.id ? { clau: CLAU_BASICA, nom: "bàsica", basica: true } : claus.get(id);
+  if (!entrada) return { error: "desconeguda", id };
+  const clau = entrada.clau, n = parts.length - 2;
+  let files;
+  if (n === clau.ordre.length) files = clau.ordre;
+  else if (clau.ordre.includes("H1") && n === clau.ordre.length - 1) files = clau.ordre.filter(f => f !== "H1");
+  else return { error: "nombre", id, entrada };
+  const detalls = [], nivells = {};
+  files.forEach((f, i) => {
+    const k = clau.codis[f].indexOf(parts[1 + i]);
+    if (k >= 0) nivells[f] = k;
+    else detalls.push(i + 2);
+  });
+  const p = parts.at(-1);
+  const provisional = p === clau.prov.si ? true : p === clau.prov.no ? false : undefined;
+  if (provisional === undefined) detalls.push(parts.length);
+  if (detalls.length) return { error: "codis", id, entrada, detalls };
+  return { id, entrada, nivells, provisional, ambH1: files.includes("H1") };
+}
+
+/* Nivells (0–4, 5 = N/O) → puntuacions sobre 10. Amb H1, H = H1 + 1,5 × H2 (H1 N/O: 2,5 × H2). */
+function notesDeNivells(nivells, ambH1) {
+  const nota = k => k === 5 ? NO : 2.5 * k;
+  const notes = {};
+  CRITERIS.forEach(c => { if (c.k !== "H") notes[c.k] = nota(nivells[c.k]); });
+  const h2 = nivells.H;
+  if (!ambH1 || h2 === 5) notes.H = nota(h2);
+  else notes.H = nivells.H1 === 5 ? 2.5 * h2 : nivells.H1 + 1.5 * h2;
+  return notes;
+}
+
+function analitzar(ruta, text) {
+  const r = { ruta, fitxer: ruta.split("/").at(-1), ...nomAlumne(ruta), notes: {}, avisos: [] };
+  const av = (n, t) => r.avisos.push({ n, t });
+  const msgs = missatges(text);
+  r.msgs = msgs;
+  if (msgs.some(m => m.desconegut)) av("info", T().avFormat);
+
+  // Empremta per detectar converses copiades: la llavor del client o, si no n'hi ha, els missatges de l'alumne
+  const llavor = text.match(/\(LLAVOR=([\d ]{20,})\)/);
+  const usuari = msgs.filter(m => m.rol === "user").map(m => m.text.toLowerCase().replace(/\s+/g, " ").trim());
+  r.empremta = llavor ? "L" + llavor[1].replace(/\s/g, "") : (usuari.length >= 3 ? "U" + usuari.join("|") : null);
+
+  // Línies REF: només compten les del client
+  const linies = [];
+  msgs.forEach((m, i) => {
+    for (const x of m.text.matchAll(RE_REF)) {
+      if (m.rol === "user") av("err", T().avRefAlumne);
+      else linies.push({ i, cos: x[1] });
+    }
+  });
+
+  // Missatge de l'avaluació: el de l'última línia REF o, si no n'hi ha, l'últim amb la taula de criteris
+  let iAval = -1;
+  if (linies.length) iAval = linies.at(-1).i;
+  else {
+    for (let i = msgs.length - 1; i >= 0; i--) {
+      if (msgs[i].rol === "assistant" && Object.keys(llegirTaula(msgs[i].text)).length >= 5) { iAval = i; break; }
+    }
+  }
+
+  // Intervencions de l'alumne durant la reunió: les que el client respon amb les línies ocultes (TORN o PERFIL)
+  const ambLinia = msgs.some(m => m.rol === "assistant" && RE_LINIA.test(m.text));
+  const fins = iAval < 0 ? msgs.length : iAval;
+  r.intervencions = msgs.slice(0, fins).filter((m, i) => m.rol === "user" &&
+    (!ambLinia || (msgs[i + 1] && msgs[i + 1].rol === "assistant" && RE_LINIA.test(msgs[i + 1].text)))).length;
+  const torns = msgs.filter(m => m.rol === "assistant").flatMap(m => [...m.text.matchAll(/\(TORN=(\d+)\)/g)]).map(x => +x[1]);
+  r.torns = torns.length ? Math.max(...torns) : undefined;
+  r.perfil = (msgs.filter(m => m.rol === "assistant").map(m => m.text.match(/\[\/\/\]:\s*#\s*\(PERFIL=([\d-]+)\)/)).find(Boolean) || [])[1];
+
+  if (iAval < 0) {
+    av("err", T().avSenseAval);
+    r.estat = "err";
+    return r;
+  }
+  r.textAval = msgs[iAval].text;
+  r.iAval = iAval;
+  const taula = llegirTaula(r.textAval);
+  const vis = totalVisible(r.textAval);
+
+  let verificat = false;
+  if (linies.length) {
+    if (linies.length > 1) av("warn", T().avDiverses(linies.length));
+    const d = desxifrar(linies.at(-1).cos);
+    if (!d.error) {
+      verificat = true;
+      r.origen = d.entrada.basica ? T().origenBasic : T().origenClau(d.entrada.nom, d.id);
+      r.notes = notesDeNivells(d.nivells, d.ambH1);
+      r.provisional = d.provisional;
+      r.total = recalcular(r.notes);
+      const dif = CRITERIS.filter(c => taula[c.k] !== undefined && !igual(taula[c.k], r.notes[c.k]));
+      if (dif.length) av("err", T().avTaulaDif(dif.map(c => T().difItem(c.k, fmt(taula[c.k]), fmt(r.notes[c.k]))).join(", ")));
+      else if (vis !== undefined && r.total !== undefined && Math.abs(vis - r.total) > TOLERANCIA) av("warn", T().avTotalDif(fmt(vis), fmt(r.total)));
+      if (Object.keys(taula).length < 5) av("warn", T().avSenseTaula);
+    } else if (d.error === "desconeguda") {
+      av("err", T().avClauDesc(d.id));
+      r.clauDesconeguda = true;
+    } else if (d.error === "nombre") {
+      av("err", T().avNombre);
+    } else {
+      av("err", T().avCodis(d.detalls.join(", ")));
+    }
+  } else {
+    av("err", T().avSenseRef);
+  }
+
+  if (!verificat) {
+    r.origen = T().origenTaula;
+    r.notes = taula;
+    r.total = vis !== undefined ? vis : recalcular(taula);
+    const falten = CRITERIS.filter(c => r.notes[c.k] === undefined).map(c => c.k);
+    if (falten.length) av("warn", T().avFalten(falten.join(", ")));
+  }
+  r.recalculat = recalcular(r.notes);
+  if (r.provisional) av("warn", T().avProv);
+
+  r.estat = r.avisos.some(x => x.n === "err") ? "err" : r.avisos.some(x => x.n === "warn") ? "warn" : "ok";
+  return r;
+}
+
+/* Alumnes amb més d'un fitxer, i la mateixa conversa lliurada per alumnes diferents */
+function marcarDuplicats() {
+  const compte = {}, empremtes = {};
+  resultats.forEach(r => {
+    compte[r.alumne] = (compte[r.alumne] || 0) + 1;
+    if (r.empremta) (empremtes[r.empremta] = empremtes[r.empremta] || []).push(r);
+  });
+  const marcar = (r, n, t) => {
+    r.avisos.push({ n, t });
+    if (n === "err") r.estat = "err"; else if (r.estat === "ok") r.estat = "warn";
+  };
+  resultats.forEach(r => { if (compte[r.alumne] > 1) marcar(r, "warn", T().avDosFitxers); });
+  Object.values(empremtes).forEach(grup => {
+    const noms = [...new Set(grup.map(r => r.alumne))];
+    if (noms.length < 2) return;
+    grup.forEach(r => marcar(r, "err", T().avIdentica(noms.filter(n => n !== r.alumne).join(", "))));
+  });
+}
+
+/* ===== Pantalla ===== */
+const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+
+function pintar() {
+  pintarClaus();
+  const x = T();
+  $("capcalera").innerHTML = `<th>${x.colAlumne}</th>` + CRITERIS.map(c => `<th title="${esc(x.crit[c.k])} (${c.pes}%)">${c.k}</th>`).join("") + `<th>${x.colTotal}</th><th class="th-avisos">${x.colAvisos}</th><th class="col-accions"></th>`;
+  $("files").innerHTML = resultats.map((r, i) => `
+    <tr onclick="clicFila(event, ${i})" class="${seleccio.has(r.uid) ? "seleccionada" : ""}">
+      <td><span class="estat ${r.estat}"></span>${esc(r.alumne)}</td>
+      ${CRITERIS.map(c => `<td class="num ${r.notes[c.k] === NO ? "no" : ""}">${fmt(r.notes[c.k])}</td>`).join("")}
+      <td class="num total">${fmt(r.total)}</td>
+      <td class="avisos">${r.avisos.filter(x => x.n !== "info").map(x => `<div class="av-${x.n}">${esc(x.t)}</div>`).join("") || '<span class="av-info">—</span>'}</td>
+      <td class="col-accions">
+        <div class="accions-fila">
+          <button type="button" class="btn-ico btn-xat${xatObert === r.uid ? " actiu" : ""}" title="${esc(x.veureTitle)}" aria-label="${esc(x.veureAria(r.alumne))}" onclick="event.stopPropagation(); obrirXat(${i})" ${r.msgs && r.msgs.length ? "" : "disabled"}>${ICONA_XAT}</button>
+          <button type="button" class="btn-ico btn-paperera" title="${esc(x.treureTitle)}" aria-label="${esc(x.treureAria(r.alumne))}" onclick="event.stopPropagation(); treureConversa(${r.uid}, this)">${ICONA_PAPERERA}</button>
+          <span class="marca-sel" aria-hidden="true"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        </div>
+      </td>
+    </tr>`).join("");
+  $("buit").classList.toggle("hidden", resultats.length > 0);
+  $("sFitxers").textContent = resultats.length;
+  $("sOk").textContent = resultats.filter(r => r.estat === "ok").length;
+  $("sWarn").textContent = resultats.filter(r => r.estat === "warn").length;
+  $("sErr").textContent = resultats.filter(r => r.estat === "err").length;
+  $("btnExcel").disabled = !resultats.length;
+  if (!resultats.length && modeSeleccio) sortirSeleccio();
+  actualitzarSeleccio();
+}
+
+/* ===== Treure converses: una sola (paperera de la fila), les seleccionades o totes ===== */
+const ICONA_PAPERERA = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6"/></svg>';
+
+function treureUids(uids) {
+  entrades = entrades.filter(e => !uids.has(e.uid));
+  uids.forEach(u => seleccio.delete(u));
+  analitzarTot();
+}
+
+function treureConversa(uid, btn) {
+  confirmarAmbDobleClic(btn, T().treure, () => treureUids(new Set([uid])));
+}
+
+/* ===== Mode selecció (com a una galeria) =====
+   Fora del mode, clicar una fila obre el detall. Dins del mode, clicar qualsevol punt de la fila
+   (menys els botons) la selecciona o la desselecciona. Amb Maj + clic se selecciona tot un tram. */
+let modeSeleccio = false;
+let ultimaSeleccio = null;
+
+function clicFila(e, i) {
+  if (!modeSeleccio) { detall(i); return; }
+  const r = resultats[i];
+  const si = !seleccio.has(r.uid);
+  if (e.shiftKey && ultimaSeleccio !== null && ultimaSeleccio !== i) {
+    const [a, b] = [Math.min(ultimaSeleccio, i), Math.max(ultimaSeleccio, i)];
+    for (let k = a; k <= b; k++) marcarFila(k, si);
+  } else {
+    marcarFila(i, si);
+  }
+  ultimaSeleccio = i;
+  actualitzarSeleccio();
+}
+
+function marcarFila(k, si) {
+  const r = resultats[k];
+  if (si) seleccio.add(r.uid); else seleccio.delete(r.uid);
+  const tr = $("files").children[k];
+  if (tr) tr.classList.toggle("seleccionada", si);
+}
+
+function alternarModeSeleccio() {
+  if (modeSeleccio) sortirSeleccio();
+  else { modeSeleccio = true; ultimaSeleccio = null; actualitzarSeleccio(); }
+}
+
+function sortirSeleccio() {
+  modeSeleccio = false;
+  ultimaSeleccio = null;
+  seleccio.clear();
+  [...$("files").children].forEach(tr => tr.classList.remove("seleccionada"));
+  actualitzarSeleccio();
+}
+
+/* «Seleccionar tot» entra al mode si cal; si ja estan totes seleccionades, les desselecciona */
+function seleccionarTot() {
+  modeSeleccio = true;
+  const totes = resultats.length > 0 && seleccio.size === resultats.length;
+  resultats.forEach((r, k) => marcarFila(k, !totes));
+  actualitzarSeleccio();
+}
+
+function actualitzarSeleccio() {
+  const n = seleccio.size, hiHa = resultats.length > 0;
+  const totes = hiHa && n === resultats.length;
+  $("taulaResultats").classList.toggle("mode-seleccio", modeSeleccio);
+  const x = T();
+  $("btnSeleccionar").textContent = modeSeleccio ? x.cancellar : x.seleccionar;
+  $("btnSeleccionar").classList.toggle("actiu", modeSeleccio);
+  $("btnSelTot").textContent = totes ? x.deselTot : x.selTot;
+  $("btnSeleccionar").disabled = $("btnSelTot").disabled = !hiHa;
+  const b = $("btnEsborrar");
+  if (!b.classList.contains("confirmant")) b.textContent = modeSeleccio ? x.esborrarSel(n) : x.esborrarTot;
+  b.disabled = !hiHa || (modeSeleccio && !n);
+}
+
+/* El botó de baix: en mode selecció esborra les seleccionades; si no, totes */
+function esborrar(btn) {
+  const n = seleccio.size;
+  if (btn) {
+    confirmarAmbDobleClic(btn, modeSeleccio ? T().confSel(n) : T().confTot, () => esborrar());
+    return;
+  }
+  if (modeSeleccio) {
+    const uids = new Set(seleccio);
+    modeSeleccio = false;
+    ultimaSeleccio = null;
+    treureUids(uids);
+    return;
+  }
+  seleccio.clear();
+  entrades = [];
+  missatgesClaus = [];
+  tancarXat();
+  analitzarTot();
+}
+
+function detall(i) {
+  const r = resultats[i];
+  $("mTitol").textContent = r.alumne;
+  $("mSub").textContent = `${r.fitxer}${r.id ? " · ID " + r.id : ""}${r.origen ? " · " + r.origen : ""}`;
+  const x = T();
+  const dades = [
+    [x.dTotal, fmt(r.total)], [x.dProv, r.provisional === undefined ? "—" : (r.provisional ? x.si : x.no)],
+    [x.dPerfil, r.perfil || "—"], [x.dTorns, r.torns ?? "—"], [x.dInterv, r.intervencions ?? "—"]
+  ];
+  $("mCos").innerHTML = `
+    <h3>${x.dAvisos}</h3>
+    ${r.avisos.length ? `<ul>${r.avisos.map(a => `<li class="av-${a.n}">${esc(a.t)}</li>`).join("")}</ul>` : `<p>${x.dCap}</p>`}
+    <h3>${x.dDades}</h3>
+    <ul>${dades.map(d => `<li>${esc(d[0])}: <strong>${esc(d[1])}</strong></li>`).join("")}</ul>
+    ${r.textAval ? `<h3>${x.dMissatge}</h3><pre class="text-aval">${esc(r.textAval)}</pre>` : ""}`;
+  modalDetall = i;
+  obrirModal();
+}
+
+function obrirModal(tipus) {
+  if (tipus === "guia") {
+    modalDetall = null;
+    $("mTitol").textContent = T().guiaTitol;
+    $("mSub").textContent = T().guiaSub;
+    $("mCos").innerHTML = T().guia;
+  }
+  $("modal").classList.add("open");
+  document.body.classList.add("modal-open");
+}
+
+let modalDetall = null;     // índex de l'alumne del detall obert (per tornar-lo a pintar si canvia l'idioma)
+function tancarModal() {
+  modalDetall = null;
+  $("modal").classList.remove("open");
+  document.body.classList.remove("modal-open");
+}
+
+/* ===== Panell lateral amb la conversa ===== */
+const ICONA_XAT = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h12a2.5 2.5 0 0 1 2.5 2.5v7.5a2.5 2.5 0 0 1-2.5 2.5h-6.5l-4.5 3.5V17H6a2.5 2.5 0 0 1-2.5-2.5V7A2.5 2.5 0 0 1 6 4.5z"/><circle cx="8.3" cy="10.75" r="1.15" fill="currentColor" stroke="none"/><circle cx="12" cy="10.75" r="1.15" fill="currentColor" stroke="none"/><circle cx="15.7" cy="10.75" r="1.15" fill="currentColor" stroke="none"/></svg>';
+const RE_OCULTA = /^\s*\[\/\/\]:\s*#\s*\(.*\)\s*$/;
+let xatObert = null;          // uid de la conversa que es mostra
+let mostrarOcultes = false;
+
+/* Markdown bàsic dels missatges: negretes, cursives, encapçalaments, llistes i taules */
+function inlineMd(s) {
+  return s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+          .replace(/(^|[^*\w])\*(?!\s)([^*\n]+?)\*(?!\w)/g, "$1<em>$2</em>")
+          .replace(/`([^`\n]+)`/g, "<code>$1</code>");
+}
+
+function markdown(text) {
+  const linies = esc(text).split("\n");
+  const esTaula = l => /^\s*\|.*\|\s*$/.test(l);
+  const cel = l => l.trim().replace(/^\||\|$/g, "").split("|").map(c => inlineMd(c.trim()));
+  const reLlista = /^\s*(?:[-*•]|(\d+)\.)\s+(.*)$/;
+  let html = "", para = [];
+  const tancarPara = () => { if (para.length) { html += `<p>${para.map(inlineMd).join("<br>")}</p>`; para = []; } };
+  for (let i = 0; i < linies.length; i++) {
+    const l = linies[i];
+    if (RE_OCULTA.test(l)) {
+      tancarPara();
+      if (mostrarOcultes) html += `<div class="oculta">${l.trim()}</div>`;
+      continue;
+    }
+    if (esTaula(l) && i + 1 < linies.length && /^\s*\|[\s:|-]+\|\s*$/.test(linies[i + 1])) {
+      tancarPara();
+      const cap = cel(l); i += 2;
+      const files = [];
+      while (i < linies.length && esTaula(linies[i])) files.push(cel(linies[i++]));
+      i--;
+      html += `<div class="taula-xat"><table><thead><tr>${cap.map(c => `<th>${c}</th>`).join("")}</tr></thead><tbody>${files.map(f => `<tr>${f.map(c => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+      continue;
+    }
+    const mL = l.match(reLlista);
+    if (mL) {
+      tancarPara();
+      const tipus = mL[1] ? "ol" : "ul";
+      html += `<${tipus}>`;
+      while (i < linies.length && linies[i].match(reLlista)) html += `<li>${inlineMd(linies[i++].match(reLlista)[2])}</li>`;
+      i--;
+      html += `</${tipus}>`;
+      continue;
+    }
+    const mH = l.match(/^\s*#{1,6}\s+(.*)$/);
+    if (mH) { tancarPara(); html += `<p class="titol-md">${inlineMd(mH[1])}</p>`; continue; }
+    if (!l.trim()) { tancarPara(); continue; }
+    para.push(l);
+  }
+  tancarPara();
+  return html;
+}
+
+function pintarXat() {
+  const k = resultats.findIndex(r => r.uid === xatObert);
+  if (k < 0) { tancarXat(); return; }
+  const r = resultats[k];
+  $("xatNom").textContent = r.alumne;
+  $("xatFitxer").textContent = r.fitxer;
+  $("xatAnt").disabled = k <= 0;
+  $("xatSeg").disabled = k >= resultats.length - 1;
+  $("xatOcultes").checked = mostrarOcultes;
+  $("xatCos").innerHTML = (r.msgs || []).map((m, i) => {
+    const cos = markdown(m.text);
+    if (!cos) return "";
+    const alumne = m.rol === "user";
+    const etiqueta = i === r.iAval ? `${T().client} · <span class="xat-tag">${T().tagAval}</span>` : (alumne ? esc(r.alumne) : T().client);
+    return `<div class="bombolla-fila ${alumne ? "alumne" : "client"}"><div class="bombolla-nom">${etiqueta}</div><div class="bombolla">${cos}</div></div>`;
+  }).join("") || `<p class="buit">${T().senseMissatges}</p>`;
+  document.querySelectorAll(".btn-xat").forEach(b => b.classList.remove("actiu"));
+  const fila = $("files").children[k];
+  if (fila) fila.querySelector(".btn-xat")?.classList.add("actiu");
+}
+
+function obrirXat(i) {
+  const r = resultats[i];
+  if (!r) return;
+  const canvi = xatObert !== r.uid;
+  xatObert = r.uid;
+  pintarXat();
+  if (canvi) $("xatCos").scrollTop = 0;
+  $("xat").classList.add("obert");
+  $("xat").setAttribute("aria-hidden", "false");
+  document.body.classList.add("xat-obert");
+}
+
+function moureXat(pas) {
+  const k = resultats.findIndex(r => r.uid === xatObert) + pas;
+  if (k >= 0 && k < resultats.length) obrirXat(k);
+}
+
+function tancarXat() {
+  xatObert = null;
+  ampliarXat(false);
+  $("xat").classList.remove("obert");
+  $("xat").setAttribute("aria-hidden", "true");
+  document.body.classList.remove("xat-obert");
+  document.querySelectorAll(".btn-xat").forEach(b => b.classList.remove("actiu"));
+}
+
+function refrescarXat() { if (xatObert) pintarXat(); }
+
+/* Amplada del panell: s'arrossega la vora esquerra (doble clic: amplada per defecte). Es recorda al navegador. */
+const XAT_MIN = 340, CLAU_AMPLADA = "avaluador_amplada_xat";
+const xatMax = () => Math.max(XAT_MIN, Math.min(1100, window.innerWidth - 360));
+function posarAmplada(w, desar) {
+  const r = document.documentElement;
+  if (w == null) { r.style.removeProperty("--xat-w"); if (desar) { try { localStorage.removeItem(CLAU_AMPLADA); } catch (e) {} } return; }
+  w = Math.round(Math.min(Math.max(w, XAT_MIN), xatMax()));
+  r.style.setProperty("--xat-w", `${w}px`);
+  if (desar) { try { localStorage.setItem(CLAU_AMPLADA, String(w)); } catch (e) {} }
+}
+function iniciarRedimensio() {
+  const vora = $("xatVora");
+  let actiu = false;
+  vora.addEventListener("pointerdown", e => {
+    if ($("xat").classList.contains("ampliat")) return;
+    actiu = true;
+    vora.setPointerCapture(e.pointerId);
+    document.body.classList.add("redimensionant");
+    e.preventDefault();
+  });
+  vora.addEventListener("pointermove", e => { if (actiu) posarAmplada(window.innerWidth - e.clientX, false); });
+  const acabar = () => {
+    if (!actiu) return;
+    actiu = false;
+    document.body.classList.remove("redimensionant");
+    posarAmplada(parseFloat(getComputedStyle($("xat")).width), true);
+  };
+  vora.addEventListener("pointerup", acabar);
+  vora.addEventListener("pointercancel", acabar);
+  vora.addEventListener("dblclick", () => posarAmplada(null, true));
+  window.addEventListener("resize", () => {
+    const w = parseFloat(document.documentElement.style.getPropertyValue("--xat-w"));
+    if (w) posarAmplada(w, false);
+  });
+  try { const w = parseFloat(localStorage.getItem(CLAU_AMPLADA)); if (w) posarAmplada(w, false); } catch (e) {}
+}
+
+/* Vista ampliada: el panell es converteix en una finestra flotant gran al mig de la pantalla */
+function ampliarXat(si) {
+  const x = $("xat");
+  const ampliat = si === undefined ? !x.classList.contains("ampliat") : si;
+  x.classList.toggle("ampliat", ampliat);
+  document.body.classList.toggle("xat-ampliat", ampliat);
+  $("xatAmpliar").innerHTML = ampliat ? ICONA_REDUIR : ICONA_AMPLIAR;
+  $("xatAmpliar").title = ampliat ? T().costat : T().ampliar;
+  $("xatAmpliar").setAttribute("aria-label", $("xatAmpliar").title);
+}
+const ICONA_AMPLIAR = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
+const ICONA_REDUIR = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>';
+
+/* ===== Excel (.xlsx sense llibreries) ===== */
+const CRC = (() => { const t = []; for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+function crc32(b) { let c = 0xffffffff; for (let i = 0; i < b.length; i++) c = CRC[(c ^ b[i]) & 0xff] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; }
+
+function ferZip(fitxers) {
+  const enc = new TextEncoder(), parts = [], central = [];
+  let off = 0;
+  fitxers.forEach(([nom, contingut]) => {
+    const n = enc.encode(nom), d = enc.encode(contingut), crc = crc32(d);
+    const h = new DataView(new ArrayBuffer(30));
+    h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x800, true);
+    h.setUint32(14, crc, true); h.setUint32(18, d.length, true); h.setUint32(22, d.length, true); h.setUint16(26, n.length, true);
+    parts.push(new Uint8Array(h.buffer), n, d);
+    const c = new DataView(new ArrayBuffer(46));
+    c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true); c.setUint16(8, 0x800, true);
+    c.setUint32(16, crc, true); c.setUint32(20, d.length, true); c.setUint32(24, d.length, true); c.setUint16(28, n.length, true);
+    c.setUint32(42, off, true);
+    central.push(new Uint8Array(c.buffer), n);
+    off += 30 + n.length + d.length;
+  });
+  const midaC = central.reduce((s, x) => s + x.length, 0);
+  const e = new DataView(new ArrayBuffer(22));
+  e.setUint32(0, 0x06054b50, true); e.setUint16(8, fitxers.length, true); e.setUint16(10, fitxers.length, true);
+  e.setUint32(12, midaC, true); e.setUint32(16, off, true);
+  return new Blob([...parts, ...central, new Uint8Array(e.buffer)], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+}
+
+const xml = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+function col(n) { let s = ""; n++; while (n) { const m = (n - 1) % 26; s = String.fromCharCode(65 + m) + s; n = Math.floor((n - 1) / 26); } return s; }
+
+/* Cel·la: número, fórmula ({f}), text o buida. Estils: 0 normal, 1 capçalera, 2 número amb decimals, 3 text ajustat */
+function cela(ref, v, estil) {
+  const s = estil ? ` s="${estil}"` : "";
+  if (v === undefined || v === null || v === "") return estil ? `<c r="${ref}"${s}/>` : "";
+  if (typeof v === "number") return `<c r="${ref}"${s}><v>${v}</v></c>`;
+  if (typeof v === "object" && v.f) return `<c r="${ref}"${s}><f>${xml(v.f)}</f></c>`;
+  return `<c r="${ref}" t="inlineStr"${s}><is><t xml:space="preserve">${xml(v)}</t></is></c>`;
+}
+
+function full(files, amplades, estils, nFilesFiltre) {
+  const rows = files.map((fila, r) => `<row r="${r + 1}">${fila.map((v, c) => cela(col(c) + (r + 1), v, r === 0 ? 1 : estils[c])).join("")}</row>`).join("");
+  const cols = amplades.map((w, i) => `<col min="${i + 1}" max="${i + 1}" width="${w}" customWidth="1"/>`).join("");
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>${cols}</cols><sheetData>${rows}</sheetData><autoFilter ref="A1:${col(amplades.length - 1)}${nFilesFiltre}"/></worksheet>`;
+}
+
+function descarregarExcel() {
+  const x = T(), xl = x.xl;
+  const cap = [xl.alumne, xl.id, xl.fitxer, ...CRITERIS.map(c => `${c.k}. ${x.crit[c.k]} (${c.pes}%)`),
+    xl.total, xl.prov, xl.perfil, xl.torns, xl.interv, xl.origen, xl.estat, xl.avisos, xl.validada];
+  const ESTAT = { ok: xl.ok, warn: xl.warn, err: xl.err };
+  const files = [cap, ...resultats.map(r => [
+    r.alumne, r.id ? Number(r.id) : "", r.fitxer,
+    ...CRITERIS.map(c => r.notes[c.k]),
+    r.total, r.provisional === undefined ? "" : (r.provisional ? x.si : x.no),
+    r.perfil || "", r.torns, r.intervencions, r.origen || "", ESTAT[r.estat],
+    r.avisos.map(x => x.t).join(" "), ""
+  ])];
+  // Fila de mitjanes (els «N/O» i les cel·les buides no compten)
+  const ultima = resultats.length + 1;
+  const mitjanes = cap.map((_, c) => (c >= 3 && c <= 3 + CRITERIS.length) ? { f: `IFERROR(AVERAGE(${col(c)}2:${col(c)}${ultima}),"")` } : "");
+  mitjanes[0] = xl.mitjana;
+  files.push([], mitjanes);
+  const amplades = [28, 11, 34, ...CRITERIS.map(() => 12), 13, 11, 15, 10, 12, 26, 12, 60, 13];
+  const estils = [0, 0, 0, ...CRITERIS.map(() => 2), 2, 0, 0, 0, 0, 0, 0, 3, 2];
+  const nFiltre = Math.max(2, ultima);
+
+  const fitxers = [
+    ["[Content_Types].xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>`],
+    ["_rels/.rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`],
+    ["xl/workbook.xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="${xl.full}" sheetId="1" r:id="rId1"/></sheets><definedNames><definedName name="_xlnm._FilterDatabase" localSheetId="0" hidden="1">'${xl.full}'!$A$1:$${col(cap.length - 1)}$${nFiltre}</definedName></definedNames></workbook>`],
+    ["xl/_rels/workbook.xml.rels", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`],
+    ["xl/styles.xml", `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><numFmts count="1"><numFmt numFmtId="164" formatCode="0.0#"/></numFmts><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFD97757"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="4"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment wrapText="1" vertical="center"/></xf><xf numFmtId="164" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1" applyAlignment="1"><alignment horizontal="center"/></xf><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0" applyAlignment="1"><alignment wrapText="1" vertical="top"/></xf></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`],
+    ["xl/worksheets/sheet1.xml", full(files, amplades, estils, nFiltre)]
+  ];
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(ferZip(fitxers));
+  const d = new Date();
+  a.download = `${xl.nom}_${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}.xlsx`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+/* ===== Idioma de la interfície ===== */
+function canviarIdiomaUI(lang) {
+  idioma = TEXTOS[lang] ? lang : "cat";
+  try { localStorage.setItem("avaluador_idioma", idioma); } catch (e) {}
+  document.documentElement.lang = idioma === "cat" ? "ca" : idioma;
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.toggle("active", b.id === `btn_lang_${idioma}`));
+  const x = T();
+  document.title = x.titol;
+  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = x[el.dataset.t]; });
+  document.querySelectorAll("[data-th]").forEach(el => { el.innerHTML = x[el.dataset.th]; });
+  document.querySelectorAll("[data-tt]").forEach(el => { el.title = x[el.dataset.tt]; el.setAttribute("aria-label", x[el.dataset.tt]); });
+  $("xatAmpliar").title = $("xat").classList.contains("ampliat") ? x.costat : x.ampliar;
+  $("xatAmpliar").setAttribute("aria-label", $("xatAmpliar").title);
+  // Els avisos i els orígens es generen en analitzar: es tornen a generar en el nou idioma
+  analitzarTot();
+  if ($("modal").classList.contains("open")) { if (modalDetall !== null) detall(modalDetall); else obrirModal("guia"); }
+}
+
+/* ===== Tema i inici ===== */
+function alternarTema() {
+  const clar = document.body.classList.toggle("light-theme");
+  try { localStorage.setItem("theme_preference", clar ? "light" : "dark"); } catch (e) {}
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  try { if (localStorage.getItem("theme_preference") === "light") document.body.classList.add("light-theme"); } catch (e) {}
+  $("versio").textContent = VERSIO;
+  let guardat = null;
+  try { guardat = localStorage.getItem("avaluador_idioma"); } catch (e) {}
+  llegirClausDesades();
+  posarProteccio(claus.size > 0);
+  $("protAvancada").addEventListener("change", e => posarProteccio(e.target.checked));
+  // Dues zones: la gran (converses; si hi cau un JSON de client, també el carrega) i la petita (només claus)
+  const lligarDrop = (zona, input, accio) => {
+    zona.addEventListener("click", () => input.click());
+    zona.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); input.click(); } });
+    input.addEventListener("change", () => { accio([...input.files]); input.value = ""; });
+    ["dragenter", "dragover"].forEach(ev => zona.addEventListener(ev, e => { e.preventDefault(); zona.classList.add("over"); }));
+    ["dragleave", "drop"].forEach(ev => zona.addEventListener(ev, e => { e.preventDefault(); zona.classList.remove("over"); }));
+    zona.addEventListener("drop", e => accio([...e.dataTransfer.files]));
+  };
+  lligarDrop($("drop"), $("fitxers"), afegirFitxers);
+  lligarDrop($("dropClaus"), $("fitxersClaus"), afegirClients);
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape") return;
+    if ($("modal").classList.contains("open")) tancarModal();
+    else if ($("xat").classList.contains("ampliat")) ampliarXat(false);
+    else if ($("xat").classList.contains("obert")) tancarXat();
+    else if (modeSeleccio) sortirSeleccio();
+  });
+  $("xatOcultes").addEventListener("change", e => { mostrarOcultes = e.target.checked; pintarXat(); });
+  $("xatAmpliar").innerHTML = ICONA_AMPLIAR;
+  iniciarRedimensio();
+  canviarIdiomaUI(guardat || "cat");
+});
+</script>
+</body>
+</html>
